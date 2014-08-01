@@ -1,0 +1,7 @@
+<ul>
+  <% @climates.each do |c| %>
+    <li>
+      <strong><%= c.climate =%></strong> -- Zone: <%= c.zone =%> <%= link_to "Show me more about climate!", climate_path(c)  %>
+    </li>
+  <% end %>
+</ul>
