@@ -7,8 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+      <header class="header_element">
+      <div><a href="index.html"><img id="top_icon" src="/assets/white_leaf.png"></a></div>
+      <div><p class="page_title">We Gardn</p></div>
+      <div><input id="sign_in" type="button" value="Login"></input></div>
+    </header>
 
-<%= yield %>
+    <div class="sun">
+    </div>
+    <footer class="grass">
+    </footer>
+    <footer class="dirt">
+    </footer>
+  </div>
+  <div class="content">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
