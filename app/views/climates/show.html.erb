@@ -8,10 +8,9 @@
 <%= link_to "Back to the list", climates_path %>
 
 <h3>Users in this climate:</h3>
-  
+  <li>
    <% @climate.users.each do |user| %>
-    <li>
       <strong><%= p user.name %></strong>
-    </li>
   <% end %>
+</li>
 

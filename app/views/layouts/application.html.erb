@@ -10,7 +10,7 @@
       <header class="header_element">
       <div><a href="index.html"><img id="top_icon" src="/assets/white_leaf.png"></a></div>
       <div><p class="page_title">We Gardn</p></div>
-      <div><input id="sign_in" type="button" value="Login"></input></div>
+      <div><%= button_to "Login", users_new_path, :id => "sign_in", :method => :get %></div>
     </header>
 
     <div class="sun">

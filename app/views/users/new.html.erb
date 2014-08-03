@@ -4,10 +4,10 @@
   <%= user.text_field :name, placeholder: "Name" %>
   <%= user.text_field :email, placeholder: "E-mail" %>
   <%= user.text_field :zipcode, placeholder: "Zipcode" %>
-  <%= user.collection_select :climate_id, Climate.all, :id, :climate %>
+  <%= user.collection_select :climate_id, Climate.all, :id, :climate%>
 
   <%= user.submit "Sign Up!" %>
   
-<% end %>
+<% end %> 
 
 <%= link_to "See other users", users_path %>

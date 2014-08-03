@@ -40,4 +40,8 @@ class ClimatesController < ApplicationController
     redirect_to climates_path
   end
 
+  def climate_params
+    params.require(:climate).permit(:user_id)
+  end
+
 end
