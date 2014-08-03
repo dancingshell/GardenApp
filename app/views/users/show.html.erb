@@ -1,7 +1,7 @@
 <h1>
   <%= @user.name %>
 </h1>
-<p><%= @user.name %> lives in a <%= @user.climate.climate %> with planting zone <%= @user.climate.zone %>.</p>
+<p><%= @user.name %> lives in a <%=link_to @user.climate.climate, climate_path(@user.climate_id)  %> climate, with planting zone <%= @user.climate.zone %>.</p>
 
 <%= link_to "Delete #{@user.name}", :user, method: :delete, data: {confirm: 'Are you sure you want to delete it?'} %>
 
