@@ -13,7 +13,7 @@ class ClimatesController < ApplicationController
   end
 
   def create
-    @climate = Climate.new(params.require(:climate).permit(:climate, :zone))
+    @climate = Climate.new(climate_params)
     if @climate.save
       redirect_to climates_path
     else
@@ -27,7 +27,7 @@ class ClimatesController < ApplicationController
 
   def update
     @climate = Climate.find(params[:id])
-    if @climate.update_attributes(params.require(:climate).permit(:climate, :zone))
+    if @climate.update_attributes(climate_params)
       redirect_to climates_path
     else
       render 'edit'
@@ -41,7 +41,7 @@ class ClimatesController < ApplicationController
   end
 
   def climate_params
-    params.require(:climate).permit(:user_id)
+    params.require(:climate).permit(:climate, :zone)
   end
 
 end

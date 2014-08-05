@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GardenApp2</title>
+  <title>My Garden</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -9,8 +9,8 @@
 <body>
       <header class="header_element">
       <div><a href="index.html"><img id="top_icon" src="/assets/white_leaf.png"></a></div>
-      <div><p class="page_title">We Gardn</p></div>
-      <div><%= button_to "Login", users_new_path, :id => "sign_in", :method => :get %></div>
+      <div><p class="page_title">Well Rooted</p></div>
+      <div><%= button_to "Sign Up", users_new_path, :id => "sign_in", :method => :get %></div>
     </header>
 
     <div class="sun">
