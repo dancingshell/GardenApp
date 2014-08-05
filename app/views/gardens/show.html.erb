@@ -1,5 +1,11 @@
 <h1>My <%= @garden.name %></h1>
 
 <p>Plants in my garden:</p>
+<ul>
+  <% @garden.plants.each do |p| %>
+  <li><%= p.name %></li>
+  <% end %>
+</ul>
+<%= link_to "Add new plant", plants_new_path %>
 
 <%= link_to "Back to all gardens", gardens_path %>

@@ -1,0 +1,13 @@
+<h1>New Plant</h1>
+
+<%= form_for @plant do |g| %>
+  <%= g.text_field :name, placeholder: "Name" %>
+  <%= g.text_field :health, placeholder: "Health" %>
+  <%= g.text_field :notes, placeholder: "Notes" %>
+  <%= g.collection_select :variety_id, Variety.all, :id, :variety %>
+
+  <%= g.submit "Add Plant" %>
+  
+<% end %> 
+
+<%= link_to "See all your gardens ", gardens_path %>

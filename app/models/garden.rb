@@ -4,5 +4,5 @@ class Garden
   field :shade, type: String
   belongs_to :season
   belongs_to :user
-  has_many :varieties
+  has_many :plants
 end

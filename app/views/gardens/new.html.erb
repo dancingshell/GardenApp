@@ -1,10 +1,10 @@
 <h1>Tell me about your garden</h1>
 
-<%= form_for @garden do |g| %>
-  <%= g.text_field :name, placeholder: "Name" %>
-  <%= g.text_field :shade, placeholder: "Shade" %>
-  <%= g.collection_select :season_id, Season.all, :id, :season%>
-  <%= g.collection_select :user_id, User.all, :id, :name %>
+<%= form_for @garden do |f| %>
+  <%= f.text_field :name, placeholder: "Name" %>
+  <%= f.text_field :shade, placeholder: "Shade" %>
+  <%= f.collection_select :season_id, Season.all, :id, :season%>
+  <%= f.collection_select :user_id, User.all, :id, :name %>
 
   <%= g.submit "Make Garden" %>
   

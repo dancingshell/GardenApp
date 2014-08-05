@@ -4,4 +4,5 @@ class Plant
   field :health, type: String
   field :notes, type: String
   belongs_to :variety
+  belongs_to :garden
 end

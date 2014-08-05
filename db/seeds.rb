@@ -18,9 +18,9 @@
     ])
 
     seasons = Season.create([
-      { year: "2014", season: "summer", user: users[0]},
-      { year: "2014", season: "spring", user: users[0]},
-      { year: "2014", season: "summer", user: users[1]}
+      { year: "2014", season: "summer"},
+      { year: "2014", season: "spring"},
+      { year: "2014", season: "summer"}
     ])
 
     gardens = Garden.create([
