@@ -8,10 +8,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id]) 
   end
 
+  # prepare to show the sign up form
   def new
     @user = User.new
+    @is_signup = true
   end
 
+  # actually build the user
   def create
     @user = User.new(user_params)
     if @user.save
@@ -41,7 +44,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :zipcode, :climate_id)
+    params.require(:user).permit(:name, :password, :password_confirmation, :email, :zipcode, :climate_id)
   end
 
 end

@@ -5,6 +5,6 @@
       <strong><%= u.name =%></strong> -- <%= link_to u.climate.climate, climate_path(u.climate_id) if u.climate %> <%= link_to "Show me more about user!", user_path(u)  %>
     </li>
   <% end %>
-  <%= link_to "Sign Up!", users_new_path %>
+  <%= link_to "Sign Up!", new_user_path %>
 
 </ul>

@@ -6,7 +6,7 @@
   <%= f.collection_select :season_id, Season.all, :id, :season%>
   <%= f.collection_select :user_id, User.all, :id, :name %>
 
-  <%= g.submit "Make Garden" %>
+  <%= f.submit "Make Garden" %>
   
 <% end %> 
 
