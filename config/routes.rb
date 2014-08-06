@@ -8,6 +8,18 @@ GardenApp2::Application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   resources :photos
 
+  resources :users do
+    resources :gardens
+  end
+
+  resources :gardens do
+    resources :plants
+  end
+
+  resources :plants do
+    resources :photos
+  end
+
   get "plants/" => "plants#index"
 
   get "plants/new" => "plants#new"

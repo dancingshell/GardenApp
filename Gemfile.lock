@@ -160,6 +160,7 @@ DEPENDENCIES
   jquery-rails
   mongoid!
   mongoid-paperclip (~> 0.0.8)
+  paperclip
   pry-rails (~> 0.3.2)
   rails (= 4.0.4)
   sass-rails (~> 4.0.2)

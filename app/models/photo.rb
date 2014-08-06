@@ -16,6 +16,7 @@
 class Photo
   include Mongoid::Document
   include Mongoid::Paperclip
+
   belongs_to :plant
 
   has_mongoid_attached_file :image
