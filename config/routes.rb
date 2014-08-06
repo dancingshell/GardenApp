@@ -1,8 +1,12 @@
 GardenApp2::Application.routes.draw do
+  get "photos/index"
+  get "photos/new"
+  get "photos/show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   resource :session, only: [:new, :create, :destroy]
+  resources :photos
 
   get "plants/" => "plants#index"
 
