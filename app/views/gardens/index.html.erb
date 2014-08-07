@@ -1,7 +1,9 @@
 <h1> My Gardens </h1>
 <ul>
 <% @gardens.each do |g| %>
-<li><%= link_to g.name, garden_path(g) %></li>
+  <% if g.user == current_user %>
+    <li><%= link_to g.name, garden_path(g) %></li>
+  <% end %>
 <% end %>
 </ul>
-<%= link_to "Add a new garden", gardens_new_path %>
+<%= link_to "Add a new garden", new_garden_path %>

@@ -2,15 +2,19 @@
 <html>
 <head>
   <title>My Garden</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Dosis", rel: 'stylesheet', type:'text/css' %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-      <header class="header_element">
-      <div><a href="index.html"><img id="top_icon" src="/assets/white_leaf.png"></a></div>
-      <div><p class="page_title">Well Rooted</p></div>
-      <div><%= button_to "Sign Up", new_user_path, :id => "sign_in", :method => :get %></div>
+      <header class="header_element row">
+      <div class="col-xlg-4"><%= link_to (image_tag "/assets/white_leaf.png", :id => "top_icon"), root_path %></div>
+      <div class="col-xlg-1 page_title">Well Rooted</div>
+      <div class="col-xlg-1 col-md-offset-10"><%= button_to "Log In", new_session_path, :method => :get, :class => "btn btn-primary" if !current_user %></div>
+      <% if current_user %>
+       <div class="col-xlg-1 col-md-offset-10"><%= link_to "Log Out", session_path, :class => "btn btn-warning", method: :delete if current_user%></div>
+      <% end %>
     </header>
 
     <div class="sun">
@@ -24,13 +28,7 @@
    <div class="container">
 
 
-    <% if current_user %>
-      Welcome, <%= current_user.name %>!
-      <%= link_to "Log out", session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_path if !@is_signup %>
-      <%= link_to "Log in", new_session_path if !@is_login%>
-    <% end %>
+
     <%= yield %>
   </div>
   </div>

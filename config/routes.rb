@@ -6,33 +6,33 @@ GardenApp2::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resource :session, only: [:new, :create, :destroy]
-  resources :photos
+  # resources :photos
 
-  resources :users do
-    resources :gardens
+  resources :users 
+
+  resources :plants do
+    resources :photos
   end
 
   resources :gardens do
     resources :plants
   end
 
-  resources :plants do
-    resources :photos
-  end
 
-  get "plants/" => "plants#index"
 
-  get "plants/new" => "plants#new"
+  # get "plants/" => "plants#index"
 
-  get "plants/:id" => "plants#show", as: :plant
+  # get "plants/new" => "plants#new"
 
-  post "plants/" => "plants#create"
+  # get "plants/:id" => "plants#show", as: :plant
 
-  get "plants/:id/edit" => "plants#edit"
+  # post "plants/" => "plants#create"
 
-  patch "plants/:id" => "plants#update"
+  # get "plants/:id/edit" => "plants#edit"
 
-  delete "plants/:id" => "plants#destroy"
+  # patch "plants/:id" => "plants#update"
+
+  # delete "plants/:id" => "plants#destroy"
 
 #######
   get "varieties/" => "varieties#index"
@@ -51,19 +51,19 @@ GardenApp2::Application.routes.draw do
 
 #######
 
-  get "gardens/" => "gardens#index"
+  # get "gardens/" => "gardens#index"
 
-  get "gardens/new" => "gardens#new"
+  # get "gardens/new" => "gardens#new"
 
-  get "gardens/:id" => "gardens#show", as: :garden
+  # get "gardens/:id" => "gardens#show", as: :garden
 
-  post "gardens/" => "gardens#create"
+  # post "gardens/" => "gardens#create"
 
-  get "gardens/:id/edit" => "gardens#edit"
+  # get "gardens/:id/edit" => "gardens#edit"
 
-  patch "gardens/:id" => "gardens#update"
+  # patch "gardens/:id" => "gardens#update"
 
-  delete "gardens/:id" => "gardens#destroy"
+  # delete "gardens/:id" => "gardens#destroy"
 
 #######
 
@@ -83,21 +83,21 @@ GardenApp2::Application.routes.draw do
 
 #######
 
-  get "users/" => "users#index"
+#   get "users/" => "users#index"
 
-  get "users/new" => "users#new", as: :new_user
+#   get "users/new" => "users#new", as: :new_user
 
-  get "users/:id" => "users#show", as: :user
+#   get "users/:id" => "users#show", as: :user
 
-  post "users/" => "users#create"
+#   post "users/" => "users#create"
 
-  get "users/:id/edit" => "users#edit"
+#   get "users/:id/edit" => "users#edit"
 
-  patch "users/:id" => "users#update"
+#   patch "users/:id" => "users#update"
 
-  delete "users/:id" => "users#destroy"
+#   delete "users/:id" => "users#destroy"
 
-#######
+# #######
 
   get "climates/" => "climates#index"
 
@@ -114,7 +114,7 @@ GardenApp2::Application.routes.draw do
   delete "climates/:id" => "climates#destroy"
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'sessions#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

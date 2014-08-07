@@ -1,4 +1,9 @@
 class SessionsController < ApplicationController
+  
+  def index
+    #welcome page  
+  end
+
   def new
     @user = User.new
     @is_login = true

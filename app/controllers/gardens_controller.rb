@@ -13,7 +13,7 @@ class GardensController < ApplicationController
   end
 
   def create
-    garden = Garden.new(user_params)
+    garden = current_user.gardens.create(user_params)
     if garden.save
       redirect_to gardens_path
     else
