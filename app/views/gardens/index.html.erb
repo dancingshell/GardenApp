@@ -1,4 +1,6 @@
-<h1> My Gardens </h1>
+<h3>Hi, <%= current_user.name.capitalize %>!</h3>
+
+<h1><%= current_user.name.capitalize %>'s Gardens:</h1>
 <ul>
 <% @gardens.each do |g| %>
   <% if g.user == current_user %>
@@ -6,4 +8,4 @@
   <% end %>
 <% end %>
 </ul>
-<%= link_to "Add a new garden", new_garden_path %>
+<%= link_to "Add a new garden", new_garden_path, class: "btn btn-primary" %>

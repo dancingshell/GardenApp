@@ -8,8 +8,8 @@
 <%= link_to "See all users", users_path %>
 <h3>My Gardens</h3><hr/>
 <ul>
-<% @user.gardens.each do |garden| %>
-<li><%= garden.name %></li>
+<% @user.gardens.each do |g| %>
+<li><%= link_to g.name, garden_path(g) %></li>
 <% end %>
 </ul>
 
