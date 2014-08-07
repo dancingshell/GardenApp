@@ -10,15 +10,13 @@ GardenApp2::Application.routes.draw do
 
   resources :users 
 
-  resources :plants do
-    resources :photos
-  end
-
   resources :gardens do
     resources :plants
   end
 
-
+  resources :plants do
+    resources :photos
+  end
 
   # get "plants/" => "plants#index"
 

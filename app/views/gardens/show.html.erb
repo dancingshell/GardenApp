@@ -3,9 +3,9 @@
 <p>Plants in my garden:</p>
 <ul>
   <% @garden.plants.each do |p| %>
-  <li><%= p.name %></li>
+  <li>Plant: <%= link_to p.name, garden_plant_path(@garden, p.id) %></li>
   <% end %>
 </ul>
-<%= link_to "Add new plant", new_plant_path %>
+<%= link_to "Add new plant", new_garden_plant_path(@garden) %>
 
 <%= link_to "Back to all gardens", gardens_path %>

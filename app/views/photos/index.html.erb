@@ -3,7 +3,7 @@
 <% @photos.each do |p| %>
 <div class="row">
     <div class="col-lg-2 col-sm-3 col-xs-4">
-      <%= link_to (image_tag p.image.url), photo_path(p), class: "thumbnail img-responsive" %>
+      <%= link_to (image_tag p.image.url), plant_photos_path(p), class: "thumbnail img-responsive" %>
     </div>
   </div>
 <% end %>

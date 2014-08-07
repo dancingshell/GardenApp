@@ -1,10 +1,16 @@
 class PlantsController < ApplicationController
+
+  before_action :get_garden, only:[:new, :create]
+
   def index
     @plants = Plant.all
   end
 
   def show
-    @plant = Plant.find(params[:id]) 
+    # @plant = Plant.find(params[:id])
+    @garden = Garden.where(id: params[:garden_id]).first
+    # @garden = Garden.find(params[:garden_id])
+    @plants = Plant.new
   end
 
   def new
@@ -12,9 +18,9 @@ class PlantsController < ApplicationController
   end
 
   def create
-    @plant = Plant.new(params.require(:name).permit(:health, :notes, :variety))
+    @plant = @garden.plants.new(params.require(:plant).permit(:name, :health, :notes, :variety))
     if @plant.save
-      redirect_to plants_path
+      redirect_to garden_path(@garden)
     else
       render 'new'
     end
@@ -26,7 +32,7 @@ class PlantsController < ApplicationController
 
   def update
     @plant = Plant.find(params[:id])
-    if @plant.update_attributes(params.require(:name).permit(:health, :notes, :varity))
+    if @plant.update_attributes(params.require(:plant).permit(:name, :health, :notes, :variety))
       redirect_to plants_path
     else
       render 'edit'
@@ -38,4 +44,10 @@ class PlantsController < ApplicationController
     @plant.destroy
     redirect_to plants_path
   end
+
+  private
+  def get_garden
+    @garden = Garden.where(:id => params[:garden_id]).first
+  end
+    
 end

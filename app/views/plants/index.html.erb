@@ -1,6 +1,6 @@
 <h1>Plants</h1>
 <ul>
-<% @plants.each do |p| %>
-    <li>  <%= link_to p.name, plant_path(p) %> </li>
+<% @garden.plants.each do |p| %>
+    <li>  <%= link_to p.name, garden_plant_path(@garden.id, p.id) %> </li>
 <% end %>
 </ul>

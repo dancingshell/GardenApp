@@ -1,6 +1,6 @@
 <h1>New Plant</h1>
 
-<%= form_for @plant do |g| %>
+<%= form_for @plant, {url: garden_plants_path(@garden)} do |g| %>
   <%= g.text_field :name, placeholder: "Name" %>
   <%= g.text_field :health, placeholder: "Health" %>
   <%= g.text_field :notes, placeholder: "Notes" %>
@@ -10,4 +10,4 @@
   
 <% end %> 
 
-<%= link_to "See all your gardens ", gardens_path %>
+<%= link_to "See all your gardens ", garden_plants_path %>

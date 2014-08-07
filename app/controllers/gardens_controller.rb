@@ -13,8 +13,8 @@ class GardensController < ApplicationController
   end
 
   def create
-    garden = current_user.gardens.create(user_params)
-    if garden.save
+    garden = current_user.gardens.create(garden_params)
+    if garden.save 
       redirect_to gardens_path
     else
       render 'new'
@@ -27,7 +27,7 @@ class GardensController < ApplicationController
 
   def update
     @garden = Garden.find(params[:id])
-    if @garden.update_attributes(user_params)
+    if @garden.update_attributes(garden_params)
       redirect_to gardens_path
     else
       render 'edit'
@@ -40,7 +40,7 @@ class GardensController < ApplicationController
     redirect_to gardens_path
   end
 
-  def user_params
+  def garden_params
     params.require(:garden).permit(:name, :shade, :season_id, :user_id)
   end
 
