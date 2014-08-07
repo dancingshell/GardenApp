@@ -7,10 +7,17 @@ class PlantsController < ApplicationController
   end
 
   def show
-    # @plant = Plant.find(params[:id])
+
+    # @id = params[:id]
+    # @photo = Photo.find(@id)
     @garden = Garden.where(id: params[:garden_id]).first
+    @id = params[:id]
+    @plant = Plant.find(@id)
+
+    # @plant = Plant.find(params[:id])
+    # @garden = Garden.where(id: params[:garden_id]).first
     # @garden = Garden.find(params[:garden_id])
-    @plants = Plant.new
+    # @plant = Plant.new
   end
 
   def new

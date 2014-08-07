@@ -1,7 +1,17 @@
-<h1>My <%= @plant.name %></h1>
+<h1><%= @plant.name %></h1>
 
-<p>Plants in my garden:</p>
+<p>Variety: <%= @plant.variety %></p>
+<p>Garden: <%= @plant.garden.name %></p>
+<p>Health: <%= @plant.health %></p>
+<p>Notes: <%= @plant.notes %></p>
 
-<%= link_to "Add new plant", new_plant_path %>
 
-<%= link_to "Back to all gardens", gardens_path %>
+<%= link_to "See photos for this plant", plant_photos_path(@plant) %><br>
+
+
+
+<%= link_to "Add new plant", new_garden_plant_path(@garden) %><br>
+
+<%= link_to "Back to garden", garden_path(@garden) %><br>
+
+render ''
