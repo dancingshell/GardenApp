@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
       session[:user_id] = u.id.to_s
       redirect_to gardens_path
     else
+      @login_attempt = false
       redirect_to new_session_path
     end
   end

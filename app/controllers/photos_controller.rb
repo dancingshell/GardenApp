@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
 
-  before_action :get_plant, only:[:new, :create]
+  before_action :get_plant
 
   def index
     @photos = Photo.all
@@ -48,7 +48,6 @@ class PhotosController < ApplicationController
     params.require(:photo).permit(:image)
   end
 
-  private
   def get_plant
     @plant = Plant.where(:id => params[:plant_id]).first
   end

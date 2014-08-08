@@ -27,9 +27,15 @@
   <div class="content">
    <div class="container">
 
-
+  <% if current_user || @is_login == true %>
 
     <%= yield %>
+
+  <% else %>
+
+    <h1> you have to log in! </h1>
+
+  <% end %>
   </div>
   </div>
 

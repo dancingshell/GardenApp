@@ -1,10 +1,13 @@
 <h1>Photos</h1>
 
-<% @photos.each do |p| %>
+
+<% @photos.where(plant_id: params[:plant_id]).each do |p| %>
+
+
 
 <div class="row">
     <div class="col-lg-2 col-sm-3 col-xs-4">
-      <%= link_to (image_tag p.image.url), plant_photos_path(p.id), class: "thumbnail img-responsive" if p.plant_id == @plant %>
+      <%= link_to (image_tag p.image.url), plant_photos_path(p.id), class: "thumbnail img-responsive" %>
     </div>
   </div>
 <% end %>
