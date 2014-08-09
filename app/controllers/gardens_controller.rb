@@ -1,4 +1,4 @@
-class GardensController < ApplicationController
+ class GardensController < ApplicationController
   
   def index
     @gardens = Garden.all

@@ -13,22 +13,23 @@ $orangecolor: #FFBC35;
 .garden_container {
   text-alighn: center;
 
+
 }
 
 .garden_box {
-  height: 350px;
+  height: 200px;
+  width: 350px;
   max-width: 350px;
-  background: lighten($grasscolor, 20%);
+  background: lighten($grasscolor, 20%) url('sun.png') 2px 55px no-repeat;
+  background-size: 350px;
+  image-opacity: 0.4;
+  filter: alpha(opacity=40); 
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  /*border: 3px solid darken($greencolor, 40%);*/
-  margin: 20px 20px;
+  margin: 50px 20px 30px;
+  
 
-  .sunflower {
-    margin: 0 auto;
-  }
+
 
   .garden_title {
     background: darken($grasscolor, 10%);
@@ -37,13 +38,13 @@ $orangecolor: #FFBC35;
     border-top-right-radius: 27px;
     height: 50px;
     color: white;
-    padding-top: 10px;
+    padding-top: 15px;
     -webkit-box-shadow: 0px 5px 5px -3px rgba(0,0,0,1);
     -moz-box-shadow: 0px 5px 5px -3px rgba(0,0,0,1);
     box-shadow: 0px 5px 5px -3px rgba(0,0,0,1);
 
     span {
-      font-size: 20px;
+      font-size: 18px;
       letter-spacing: 3px;
       
 
@@ -52,6 +53,8 @@ $orangecolor: #FFBC35;
         text-decoration: none;
       }
     }
+
+
     div {
       margin-top: 30px;
       margin-left: 10px;
@@ -69,9 +72,33 @@ $orangecolor: #FFBC35;
 
       }
     }
+
+
+
+
     
   }
+
 }
+
+.garden {
+  -webkit-box-shadow: 0px 20px 5px -3px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 5px 5px -3px rgba(0,0,0,1);
+  box-shadow: 0px -3px 10px -3px rgba(0,0,0,1);
+  margin-left: -15px;
+  margin-top: 150px;
+  background: darken($grasscolor, 20%);
+  height: 30px;
+  width: 350px;
+  margin-bottom: 50px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+      a{
+        margin-top: -8px;
+        text-decoration: none;
+        color: white;
+      }
+    }
 
 
 

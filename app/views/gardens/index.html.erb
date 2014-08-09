@@ -1,23 +1,24 @@
 <div class="container">
+<% if current_user %>
 <h3><%= current_user.name.capitalize %>'s Gardens:  <%= link_to "Add a new garden", new_garden_path, class: "btn btn-success" %></h3>
   <div class="row-fluid row">
     <% @gardens.each do |g| %>
       <% if g.user == current_user %>
+        
           <a class "garden_container" href="<%= garden_path(g) %>">
+            <div>
             <div class="col-md-4 text-center container-fluid garden_box">
-              <div class="garden_title">
-                <span><%= g.name.upcase %></span>
-                <% if g.shade != nil %>
-                  <div>
-                    <h3>SHADE</h3><br><hr>
-                    <p><%= g.shade %></p>
-                  </div>
-                <% end %>
-              </div>
-            </div>
+            <div class="garden_title"><span><%= g.name.upcase %></span></div>
           </a>
+
+          <div class="garden">
+            <a class="btn btn-lg" href="<%= new_user_path %>">View Garden</a>
+            <a class="btn btn-lg" href="<%= new_user_path %>">Add Plant</a>
+          </div>
+          </div>
+        </div>
       <% end %>
     <% end %>
   </div>
-  
+  <% end %>
 </div>
