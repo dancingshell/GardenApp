@@ -1,13 +1,34 @@
-<h1>Welcome, enter your information.</h1>
-<div class="signup form-horizontal">
-<%= form_for @user do |f| %>
-  <%= f.text_field :name, placeholder: "Name" %>
-  <%= f.password_field :password, placeholder: "Password" %>
-  <%= f.password_field :password_confirmation, placeholder: "Repeat Password" %>
-  <%= f.text_field :email, placeholder: "E-mail" %>
-  <%= f.text_field :zipcode, placeholder: "Zipcode" %>
-  <%= f.collection_select :climate_id, Climate.all, :id, :climate%>
+<div id="wrapper">
+
+  <%= render "partials/sidenav" %>
+
+    <div class="page-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="row">
+             <h1>Welcome, enter your information.</h1>
+              <div class="signup form-horizontal col-md-12">
+              <%= form_for @user do |f| %>
+                <%= f.text_field :name, placeholder: "Name" %>
+                <%= f.password_field :password, placeholder: "Password" %>
+                <%= f.password_field :password_confirmation, placeholder: "Repeat Password" %>
+                <%= f.text_field :email, placeholder: "E-mail" %>
+                <%= f.text_field :zipcode, placeholder: "Zipcode" %>
+                <%= f.collection_select :climate_id, Climate.all, :id, :climate%>
+              </div>
+                <%= f.submit "Sign Up!", class: "btn btn-success" %>
+                
+              <% end %> 
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
 </div>
-  <%= f.submit "Sign Up!", class: "btn btn-success" %>
-  
-<% end %> 
+<!-- /#wrapper -->
+

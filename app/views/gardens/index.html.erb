@@ -4,19 +4,24 @@
   <div class="row-fluid row">
     <% @gardens.each do |g| %>
       <% if g.user == current_user %>
-        
-          <a class "garden_container" href="<%= garden_path(g) %>">
-            <div>
-            <div class="col-md-4 text-center container-fluid garden_box">
-            <div class="garden_title"><span><%= g.name.upcase %></span></div>
-          </a>
+        <a class "garden_container" href="<%= garden_path(g) %>">
 
-          <div class="garden">
-            <a class="btn btn-lg" href="<%= new_user_path %>">View Garden</a>
-            <a class="btn btn-lg" href="<%= new_user_path %>">Add Plant</a>
+          <div class="col-md-4 text-center container-fluid garden_box">
+
+            <div class="garden_title">
+              <a class="btn btn-garden" href="<%= garden_path(g) %>">
+                <%= g.name.upcase %>
+              </a>
+            </div>
+            
+            <div class="garden">
+              <a class="btn btn-lg" href="<%= garden_path(g) %>">View Garden</a>
+              <a class="btn btn-lg" href="<%= new_garden_plant_path(g) %>">Add Plant</a>
+            </div>
+
           </div>
-          </div>
-        </div>
+        </a>
+
       <% end %>
     <% end %>
   </div>

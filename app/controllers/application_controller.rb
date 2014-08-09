@@ -4,9 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user
+  helper_method :current_gardens
+
 
   def current_user
     @current_user ||= User.where(:id => session[:user_id]).first
   end
-  
+
+  def current_gardens
+    @current_gardens ||= Garden.where(:user_id => current_user[:id] )
+  end
 end
