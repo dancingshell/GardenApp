@@ -25,7 +25,7 @@ class PlantsController < ApplicationController
   end
 
   def create
-    @plant = @garden.plants.new(params.require(:plant).permit(:name, :health, :notes, :variety))
+    @plant = @garden.plants.new(params.require(:plant).permit(:name, :health, :notes, :variety_id))
     if @plant.save
       redirect_to garden_path(@garden)
     else
@@ -39,7 +39,7 @@ class PlantsController < ApplicationController
 
   def update
     @plant = Plant.find(params[:id])
-    if @plant.update_attributes(params.require(:plant).permit(:name, :health, :notes, :variety))
+    if @plant.update_attributes(params.require(:plant).permit(:name, :health, :notes, :variety_id))
       redirect_to plants_path
     else
       render 'edit'

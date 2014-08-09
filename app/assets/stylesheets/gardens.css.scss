@@ -1,3 +1,77 @@
 // Place all the styles related to the gardens controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+$dkbluecolor: #8B38FF;
+$bluecolor: #4DA8E8;
+$greencolor: #62FF9E;
+$grasscolor: #CBE831;
+$orangecolor: #FFBC35;
+
+
+.garden_container {
+  text-alighn: center;
+
+}
+
+.garden_box {
+  height: 350px;
+  max-width: 350px;
+  background: lighten($grasscolor, 20%);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  /*border: 3px solid darken($greencolor, 40%);*/
+  margin: 20px 20px;
+
+  .sunflower {
+    margin: 0 auto;
+  }
+
+  .garden_title {
+    background: darken($grasscolor, 10%);
+    margin: 0px -15px;
+    border-top-left-radius: 27px;
+    border-top-right-radius: 27px;
+    height: 50px;
+    color: white;
+    padding-top: 10px;
+    -webkit-box-shadow: 0px 5px 5px -3px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 5px 5px -3px rgba(0,0,0,1);
+    box-shadow: 0px 5px 5px -3px rgba(0,0,0,1);
+
+    span {
+      font-size: 20px;
+      letter-spacing: 3px;
+      
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+    div {
+      margin-top: 30px;
+      margin-left: 10px;
+      text-align: left;
+      
+
+      h3 {
+        color: darken($grasscolor, 20%); 
+        text-align: center;
+        font-size: 20px;
+      }
+      p {
+        color: black;
+        font-size: 16px;
+
+      }
+    }
+    
+  }
+}
+
+
+

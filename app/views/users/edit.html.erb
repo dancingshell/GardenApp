@@ -1,13 +1,15 @@
-<h1>Welcome, enter your information.</h1>
-<div class="signup form-horizontal">
+<h1>Edit your information</h1>
+
 <%= form_for @user do |f| %>
   <%= f.text_field :name, placeholder: "Name" %>
   <%= f.password_field :password, placeholder: "Password" %>
   <%= f.password_field :password_confirmation, placeholder: "Repeat Password" %>
   <%= f.text_field :email, placeholder: "E-mail" %>
   <%= f.text_field :zipcode, placeholder: "Zipcode" %>
-  <%= f.collection_select :climate_id, Climate.all, :id, :climate%>
-</div>
-  <%= f.submit "Sign Up!", class: "btn btn-success" %>
+  <%= f.collection_select :climate_id, Climate.all, :id, :climate %>
+
+  <%= f.submit "Edit", class: "btn btn-success" %>
   
 <% end %> 
+
+<%= link_to "Back", users_path, class: "btn btn-warning" %>

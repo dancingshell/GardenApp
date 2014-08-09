@@ -1,6 +1,6 @@
 <h1><%= @plant.name %></h1>
 
-<p>Variety: <%= @plant.variety %></p>
+<p>Variety: <%= @plant.variety.variety %></p>
 <p>Garden: <%= @plant.garden.name %></p>
 <p>Health: <%= @plant.health %></p>
 <p>Notes: <%= @plant.notes %></p>
@@ -14,4 +14,3 @@
 
 <%= link_to "Back to garden", garden_path(@garden) %><br>
 
-render ''
