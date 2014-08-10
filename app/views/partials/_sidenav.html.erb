@@ -45,7 +45,7 @@
             <li>
               <a href="<%= new_garden_path %>">Add New Garden</a>
             </li>
-            <%= if current_gardens.count > 0 %>
+            <% if current_gardens.length >= 1 %>
               <li class="divider"></li>
               <% current_gardens.each do |g|  %>
                 <li>  
