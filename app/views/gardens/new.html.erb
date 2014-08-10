@@ -1,11 +1,14 @@
-<h1>Tell me about your garden</h1>
+<h1 class="page-title">Tell me about your garden</h1>
 
-<%= form_for @garden do |f| %>
-  <%= f.text_field :name, placeholder: "Name" %>
-  <%= f.text_field :shade, placeholder: "Shade" %>
-  <%= f.collection_select :season_id, Season.all, :id, :season%>
-  <%= f.submit "Make Garden", class: "btn btn-submit" %>
-  
-<% end %> 
-
-<%= link_to "See all your gardens ", gardens_path, class: "btn btn-primary" %>
+<div class="signup row">
+  <div class="col-md-3">
+      <%= form_for @garden do |f| %>
+      <%= f.text_field :name, placeholder: "Name" %>
+      <%= f.text_field :shade, placeholder: "Shade" %>
+      <%= f.collection_select :season_id, Season.all, :id, :season, :prompt => "Select Season"%>
+      <%= f.submit "Make Garden", class: "btn btn-submit" %>
+    <% end %> 
+  </div>
+<div class="col-md-3 col-md-offset-6">
+  <a class="btn btn-submit" href="<%= gardens_path %>"><span class="glyphicon glyphicon-th-large"></span> Back to all Gardens</a>
+</div>

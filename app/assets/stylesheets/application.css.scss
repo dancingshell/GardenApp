@@ -23,15 +23,19 @@ $orangecolor: #FFBC35;
 
 
 body {
+  font-family: "muli", helvetica, sans-serif;
   margin-top: 100px;
   background: white;
-  color: $orangecolor;
+  color: $grasscolor;
   a {
     color: white;
     &:hover,
     &:focus, {
       color: white;
     }
+  }
+  .page-title {
+    margin-left: 10px;
   }
 }
 
@@ -54,7 +58,7 @@ body {
     font-size: 50px;
     line-height: 80px;
     margin-bottom: 30px;
-    font-family: cursive;
+    font-family:  cursive;
   }
   .btn-welcome {
     width: 250px;
@@ -74,7 +78,7 @@ body {
   .notes,
   input,
   select {
-    color: orange;
+    color: darken($grasscolor, 20%);
     font-size: 20px;
     border-radius: 5px;
     height: 50px;
@@ -93,6 +97,8 @@ body {
   }
 
   .btn-submit{
+  /*  margin: 5px;*/
+    width: 220px;
     color: white;
     background-color: darken($grasscolor, 10%);
     span {
@@ -105,6 +111,7 @@ body {
 
   .notes {
     height: 170px;
+    /*margin-left: 5px;*/
     margin-bottom: 0px;
   }
 }
@@ -112,6 +119,8 @@ body {
 .btn-submit{
   color: white;
   background-color: darken($grasscolor, 10%);
+  margin: 5px;
+  width: 220px;
 
   &:hover {
     color: white;
@@ -221,57 +230,4 @@ li.message-footer {
 ul.alert-dropdown {
     width: 200px;
 }
-
-/* Side Navigation */
-/*
-@media(min-width:768px) {
-    .side-nav {
-        position: fixed;
-        top: 51px;
-        left: 225px;
-        width: 225px;
-        
-        margin-left: -225px;
-        border: none;
-        border-radius: 0;
-        background-color: #222;
-        height: 100%;
-    }
-
-    .side-nav>li>a {
-        background-color: #222;
-        width: 225px;
-    }
-
-    .side-nav li a:hover,
-    .side-nav li a:focus {
-        outline: none;
-        background-color: #000 !important;
-    }
-}
-
-
-.side-nav>li>ul {
-    height: 100%;
-    padding: 0;
-}
-
-/*Side bar dropdown inner link*/
-/*.side-nav>li>ul>li>a {
-    display: block;
-    padding: 10px 15px 10px 38px;
-    text-decoration: none;
-    background-color: #222;
-    color: #999;
-}
-
-.side-nav>li>ul>li>a:hover {
-    color: green;
-}*/
-
-/*.page-wrapper {
-  background-color: transparent;
-}
-*/
-
 

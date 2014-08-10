@@ -1,87 +1,91 @@
-
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-       <!--  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> -->
-            <!-- <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span> -->
-        <!-- </button> -->
-        <a class="navbar-brand" href="#"><%= image_tag "white_leaf.png", size: "25x25", class: "pull-left logo" %>WELL ROOTED</a>
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <!--  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> -->
+      <!-- <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span> -->
+    <!-- </button> -->
+    <a class="navbar-brand" href="<%= root_path %>"><%= image_tag "white_leaf.png", size: "25x25", class: "pull-left logo" %>WELL ROOTED</a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
+ <!--      This part of the nav won't show if no user is logged in -->
       <% if current_user %>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-home"> Dashboard</span><b class="caret"></b></a>
-            <ul class="dropdown-menu alert-dropdown">
-                <li>
-                    <a href="<%= gardens_path %>">View all</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#">Add New Garden</a>
-                </li>
-            </ul>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-home"> Dashboard</span><b class="caret"></b></a>
+          <ul class="dropdown-menu alert-dropdown">
+            <li>
+                <a href="#">Climate</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="#">Season</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "Gardeners", session_path, method: :delete %>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "Around Me", session_path, method: :delete %>
+            </li>
+          </ul>
         </li>
         
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-leaf"></span></i> Gardens<b class="caret"></b></a>
-            <ul class="dropdown-menu alert-dropdown">
-                <% current_gardens.each do |g|  %>
-                <li>
-                    
-                        <a href="<%= garden_path(g) %>"><%= g.name %><!-- <span class="label label-default">Alert Badge</span> --></a>
-                </li>
-                    <% end %>
-                <!-- <li>
-                    <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                </li> -->
-                
-                <li class="divider"></li>
-                <li>
-                    <a href="<%= gardens_path %>">View all</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#">Add New Garden</a>
-                </li>
-            </ul>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-leaf"> Gardens</span><b class="caret"></b></a>
+          <ul class="dropdown-menu alert-dropdown">   
+            <li>
+              <a href="<%= gardens_path %>">View All</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="<%= new_garden_path %>">Add New Garden</a>
+            </li>
+            <li class="divider"></li>
+            <% current_gardens.each do |g|  %>
+              <li>  
+                <a href="<%= garden_path(g) %>"><%= g.name %></a>
+              </li>
+            <% end %>
+          </ul>
         </li>
         <% end %>
+       <!--  End hidden part of the nav if no user login -->
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></i> <%= current_user.name if current_user%><b class="caret"></b></a>
-            <ul class="dropdown-menu alert-dropdown">
-                <% if !current_user %>
-
-                  <li>
-                    <%= link_to "Log in", new_session_path %>
-                  </li>
-                  <li>
-                    <%= link_to "Sign Up", new_user_path %>
-                  </li>
-
-                <% else %>
-                <li>
-                    <a href="<%= user_path(current_user)%>">Profile</a>
-                </li>
-                <li>
-                    <a href="#">Inbox</a>
-                </li>
-                <li>
-                    <a href="#">Settings</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Log out", session_path, method: :delete %>
-                </li>
-                <% end %>
-            </ul>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <%= current_user.name if current_user%><b class="caret"></b></a>
+          <ul class="dropdown-menu alert-dropdown">
+           <!--  Profile drop down if not logged in -->
+            <% if !current_user %>
+              <li>
+                <%= link_to "Log in", new_session_path %>
+              </li>
+              <li>
+                <%= link_to "Sign Up", new_user_path %>
+              </li>
+            <% else %>
+           <!--  Profile drop down if logged in -->
+              <li>
+                <a href="<%= user_path(current_user)%>">Profile</a>
+              </li>
+              <li>
+                <a href="#">Inbox</a>
+              </li>
+              <li>
+                <a href="#">Settings</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", session_path, method: :delete %>
+              </li>
+            <% end %>
+          </ul>
         </li>
     </ul>
+  </div>
     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-
     <!-- /.navbar-collapse -->
 </nav>

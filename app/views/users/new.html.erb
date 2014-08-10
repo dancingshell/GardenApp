@@ -1,42 +1,26 @@
-<!-- <div id="wrapper"> -->
+<div class="container-fluid">
 
-  <%= render "partials/sidenav" %>
-
-    <div class="container">
-
-        <div class="container-fluid">
-
-            <!-- Page Heading -->
-            <div class="signup-header">
-             <h1>Welcome!</h1>
-              <h2>Enter your information.</h2>
-              <div class="signup row">
-                <%= form_for @user do |f| %>
-                  <div class="col-md-3">
-                    <%= f.text_field :name, placeholder: "Name" %><br>
-                    <%= f.password_field :password, placeholder: "Password" %><br>
-                    <%= f.password_field :password_confirmation, placeholder: "Repeat Password" %><br>
-                    <%= f.text_field :email, placeholder: "E-mail" %><br>
-                    <%= f.text_field :zipcode, placeholder: "Zipcode" %><br>
-                    <%= f.collection_select :climate_id, Climate.all, :id, :climate %>
-                  </div>
-                  <div class="col-md-4">
-                    <%= f.submit "Sign Up!", class: "btn btn-submit" %>
-                  </div>
-                <% end %> 
-              </div>
-              <div data-target="#myModal">
-              </div>
-                
-            
-            <!-- /.row -->
-
+  <div class="signup-header">
+    <h1 class="page-title">Welcome!</h1>
+    <h2 class="page-title">Enter your information.</h2>
+    <div class="signup row">
+      <%= form_for @user do |f| %>
+        <div class="col-md-3">
+          <%= f.text_field :name, placeholder: "Full Name" %><br>
+          <%= f.password_field :password, placeholder: "Password" %><br>
+          <%= f.password_field :password_confirmation, placeholder: "Repeat Password" %><br>
+          <%= f.text_field :email, placeholder: "E-mail" %><br>
+          <%= f.text_field :zipcode, placeholder: "Zipcode" %><br>
+          <%= f.collection_select :climate_id, Climate.all, :id, :climate, :prompt => "Select Climate" %>
         </div>
-        <!-- /.container-fluid -->
-
+        <div class="col-md-4">
+          <%= f.submit "Sign Up!", class: "btn btn-submit" %>
+        </div>
+      <% end %> 
     </div>
-    <!-- /#page-wrapper -->
-<!-- 
-</div> -->
-<!-- /#wrapper -->
+    <!-- <div data-target="#myModal">
+    </div> -->
+  </div>
+</div>
+
 
