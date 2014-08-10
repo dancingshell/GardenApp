@@ -45,11 +45,13 @@
             <li>
               <a href="<%= new_garden_path %>">Add New Garden</a>
             </li>
-            <li class="divider"></li>
-            <% current_gardens.each do |g|  %>
-              <li>  
-                <a href="<%= garden_path(g) %>"><%= g.name %></a>
-              </li>
+            <%= if current_gardens.count > 0 %>
+              <li class="divider"></li>
+              <% current_gardens.each do |g|  %>
+                <li>  
+                  <a href="<%= garden_path(g) %>"><%= g.name %></a>
+                </li>
+              <% end %>
             <% end %>
           </ul>
         </li>
