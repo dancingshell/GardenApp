@@ -8,22 +8,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="wrapper">
   <%= render "partials/sidenav" %>
+
   <% if current_user || @is_login == true || @is_signup == true%>
+    <div class="container">
 
-  <div class="container-fluid">
+     <%= yield %>
 
-  <%= render "partials/sidenav" %>
-    <%= yield %>
-</div>
-  </div>
+   </div>
 
   <% else %>
+
     <%= render 'partials/welcome' %>
 
   <% end %>
-  </div>
   </div>
 
 </body>

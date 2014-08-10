@@ -23,9 +23,18 @@ $orangecolor: #FFBC35;
 
 
 body {
-  margin-top: 60px;
+  margin-top: 100px;
   background: white;
+  color: $orangecolor;
+  a {
+    color: white;
+    &:hover,
+    &:focus, {
+      color: white;
+    }
+  }
 }
+
 
 .welcome {
   text-align: center;
@@ -34,13 +43,235 @@ body {
   
 
   .container{
-    width: 400px;
+    width: 800px;
   }
 
+  .title {
+    font-size: 75px;
+    letter-spacing: 10px;
+  }
   .slogan {
-  line-height: 50px;
-  font-family: cursive;
+    font-size: 50px;
+    line-height: 80px;
+    margin-bottom: 30px;
+    font-family: cursive;
+  }
+  .btn-welcome {
+    width: 250px;
+    height: 50px;
+    font-size: 22px;
+    color: darken($grasscolor, 40%);
+      &:hover{
+        color: darken($grasscolor, 40%);
+      }
   }
 }
+
+.signup {
+  display: block;
+
+  .btn-variety,
+  .notes,
+  input,
+  select {
+    color: orange;
+    font-size: 20px;
+    border-radius: 5px;
+    height: 50px;
+    width: 220px;
+    margin: 5px 10px;
+    padding: 10px;
+    border: none;
+  }
+  
+  .btn-variety {
+    color: white;
+    padding-right: 30px;
+    span {
+      margin-right: 10px;
+    }
+  }
+
+  .btn-submit{
+    color: white;
+    background-color: darken($grasscolor, 10%);
+    span {
+      font-size: 18px;
+    }
+    &:hover {
+      background-color: darken($grasscolor, 15%);
+    }
+  }
+
+  .notes {
+    height: 170px;
+    margin-bottom: 0px;
+  }
+}
+
+.btn-submit{
+  color: white;
+  background-color: darken($grasscolor, 10%);
+
+  &:hover {
+    color: white;
+    background-color: darken($grasscolor, 15%);
+  }
+}
+
+
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+}
+
+#wrapper {
+    padding-left: 0;
+}
+
+#page-wrapper {
+    width: 100%;
+    padding: 0;
+    background-color: #fff;
+}
+
+.huge {
+    font-size: 50px;
+    line-height: normal;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 10px;
+    }
+}
+
+/* Top Navigation */
+
+
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+    color: #999;
+}
+.navbar-inverse>.navbar-header>a:hover,
+.navbar-inverse>.navbar-header>a:focus,
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: $grasscolor;
+    background-color: #000;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    border: 1px solid rgba(0,0,0,.15);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+ul.message-dropdown {
+    padding: 0;
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+li.message-preview {
+    width: 275px;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+
+li.message-preview>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+li.message-footer {
+    margin: 5px 0;
+}
+
+ul.alert-dropdown {
+    width: 200px;
+}
+
+/* Side Navigation */
+/*
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 51px;
+        left: 225px;
+        width: 225px;
+        
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        background-color: #222;
+        height: 100%;
+    }
+
+    .side-nav>li>a {
+        background-color: #222;
+        width: 225px;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #000 !important;
+    }
+}
+
+
+.side-nav>li>ul {
+    height: 100%;
+    padding: 0;
+}
+
+/*Side bar dropdown inner link*/
+/*.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    background-color: #222;
+    color: #999;
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: green;
+}*/
+
+/*.page-wrapper {
+  background-color: transparent;
+}
+*/
 
 

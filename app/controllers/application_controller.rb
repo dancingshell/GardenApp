@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_gardens
-    @current_gardens ||= Garden.where(:user_id => current_user[:id] )
+    @current_gardens ||= Garden.where(:user_id => current_user[:id])
   end
 end
+ 

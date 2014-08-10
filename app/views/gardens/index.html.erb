@@ -1,6 +1,6 @@
 <div class="container">
 <% if current_user %>
-<h3><%= current_user.name.capitalize %>'s Gardens:  <%= link_to "Add a new garden", new_garden_path, class: "btn btn-success" %></h3>
+<h3><%= current_user.name.capitalize %>'s Gardens:  <%= link_to "Add a new garden", new_garden_path, class: "btn btn-submit" %></h3>
   <div class="row-fluid row">
     <% @gardens.each do |g| %>
       <% if g.user == current_user %>

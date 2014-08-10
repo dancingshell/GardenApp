@@ -4,7 +4,7 @@
   <%= f.text_field :name, placeholder: "Name" %>
   <%= f.text_field :shade, placeholder: "Shade" %>
   <%= f.collection_select :season_id, Season.all, :id, :season%>
-  <%= f.submit "Make Garden", class: "btn btn-success" %>
+  <%= f.submit "Make Garden", class: "btn btn-submit" %>
   
 <% end %> 
 

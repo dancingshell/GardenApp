@@ -1,26 +1,34 @@
-<div id="wrapper">
+<!-- <div id="wrapper"> -->
 
   <%= render "partials/sidenav" %>
 
-    <div class="page-wrapper">
+    <div class="container">
 
         <div class="container-fluid">
 
             <!-- Page Heading -->
-            <div class="row">
-             <h1>Welcome, enter your information.</h1>
-              <div class="signup form-horizontal col-md-12">
-              <%= form_for @user do |f| %>
-                <%= f.text_field :name, placeholder: "Name" %>
-                <%= f.password_field :password, placeholder: "Password" %>
-                <%= f.password_field :password_confirmation, placeholder: "Repeat Password" %>
-                <%= f.text_field :email, placeholder: "E-mail" %>
-                <%= f.text_field :zipcode, placeholder: "Zipcode" %>
-                <%= f.collection_select :climate_id, Climate.all, :id, :climate%>
+            <div class="signup-header">
+             <h1>Welcome!</h1>
+              <h2>Enter your information.</h2>
+              <div class="signup row">
+                <%= form_for @user do |f| %>
+                  <div class="col-md-3">
+                    <%= f.text_field :name, placeholder: "Name" %><br>
+                    <%= f.password_field :password, placeholder: "Password" %><br>
+                    <%= f.password_field :password_confirmation, placeholder: "Repeat Password" %><br>
+                    <%= f.text_field :email, placeholder: "E-mail" %><br>
+                    <%= f.text_field :zipcode, placeholder: "Zipcode" %><br>
+                    <%= f.collection_select :climate_id, Climate.all, :id, :climate %>
+                  </div>
+                  <div class="col-md-4">
+                    <%= f.submit "Sign Up!", class: "btn btn-submit" %>
+                  </div>
+                <% end %> 
               </div>
-                <%= f.submit "Sign Up!", class: "btn btn-success" %>
+              <div data-target="#myModal">
+              </div>
                 
-              <% end %> 
+            
             <!-- /.row -->
 
         </div>
@@ -28,7 +36,7 @@
 
     </div>
     <!-- /#page-wrapper -->
-
-</div>
+<!-- 
+</div> -->
 <!-- /#wrapper -->
 

@@ -1,51 +1,26 @@
+<div class="container">
 <h1>New Plant</h1>
 
 <%= form_for @plant, {url: garden_plants_path(@garden)} do |g| %>
-  <%= g.text_field :name, placeholder: "Name" %>
-  <%= g.text_field :health, placeholder: "Health" %>
-  <%= g.text_field :notes, placeholder: "Notes" %>
-  <%= g.collection_select :variety_id, Variety.all, :id, :variety %>
-
-  <%= g.submit "", class: "btn glyphicon glyphicon-paperclip" %>
-  
+<div class="signup row">
+  <div class="col-md-3">
+    <%= g.text_field :name, placeholder: "Name" %><br>
+    <%= g.text_field :health, placeholder: "Health"%><br>
+    <%= g.collection_select :variety_id, Variety.all, :id, :variety %><br>
+    <div class="btn btn-warning btn-variety" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span>Add Variety</div>
+  </div>
+  <div class="col-md-3">
+    <%= g.text_area :notes, placeholder: "Notes", size: "30", class: "notes"  %><br>
+    <%= g.submit "Submit", class: "btn btn-submit" %>
+ </div>
+ <div class="col-md-3">
+  </div>
+  <div class="col-md-3">
+    <a class="btn btn-submit" href="<%= gardens_path %>"><span class="glyphicon glyphicon-th-large"></span> Back to all Gardens</a>
+  </div>
 <% end %> 
+</div>
+  
+ 
 
-<%= link_to "See all your gardens ", garden_plants_path %>
-
-
-<div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav side-nav">
-        <li>
-            <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-        </li>
-        <li>
-            <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Climates</a>
-        </li>
-        <li>
-            <a href="tables.html"><i class="fa fa-fw fa-table"></i> Weather</a>
-        </li>
-        <li>
-            <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-        </li>
-        <li>
-            <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-        </li>
-        <li>
-            <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-        </li>
-        <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>Gardens<i class="fa fa-fw fa-caret-down"></i></a>
-            <ul id="demo" class="collapse">
-                <li>
-                    <a href="#">View Gardens</a>
-                </li>
-                <li>
-                    <a href="#">Add A Garden</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-        </li>
-    </ul>
 </div>
