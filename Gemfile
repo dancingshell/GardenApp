@@ -44,6 +44,8 @@ gem "aws-s3", :require => "aws/s3"
 gem "simple_form"
 
 gem 'rails_12factor'
+
+gem 'mongoid-tags-arent-hard'
 # Use unicorn as the app server
 # gem 'unicorn'
 

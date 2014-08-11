@@ -16,6 +16,12 @@
 class Photo
   include Mongoid::Document
   include Mongoid::Paperclip
+  include Mongoid::TagsArentHard
+
+  field :date, :type => DateTime
+
+  taggable_with :tags, separator: ";"
+  taggable_with :plants, separator: ";"
 
   belongs_to :plant
 

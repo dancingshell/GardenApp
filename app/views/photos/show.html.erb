@@ -1,1 +1,19 @@
-<%= link_to (image_tag @photo.image.url), plant_photos_path, class: " img-responsive" %>
+<div class= "photo-container text-center row">
+
+  <div class="photo col-md-6 col-md-offset-3">
+    <%= link_to (image_tag @photo.image.url), plant_photos_path, class: "thumbnail img-responsive" %>
+
+  </div>
+  <div class="photo-text-container col-md-3">
+    <div class="photo-text-wrapper">
+      <div class="photo-text">
+        <h1>
+        <%= @photo.image_file_size %>
+        <%= @photo.tags unless @photo.tags == nil %>
+        </h1>
+      </div>
+      
+    </div>
+  </div>
+  <a class="btn btn-submit" href="<%= %>">Put function here <br>that callsto add tags<br>(maybe use angular) </a>
+</div>

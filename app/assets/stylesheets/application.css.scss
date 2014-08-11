@@ -39,6 +39,9 @@ body {
   }
 }
 
+.modal {
+  color:darken($grasscolor, 40%);
+}
 
 .welcome {
   text-align: center;
@@ -88,6 +91,9 @@ body {
     border: none;
   }
   
+  .photo-upload {
+    width: 400px;
+  }
   .btn-variety {
     color: white;
     padding-right: 30px;
@@ -128,6 +134,46 @@ body {
   }
 }
 
+.photo-container>div {
+  /*vertical-align: top;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;*/
+  margin-top: 120px;
+  /*margin-right: auto;
+  margin-left: auto;
+  display: inline-block;
+  +.photo-text-wrapper{
+    height: 200px;
+    max-height: inherit;
+  }*/
+}
+
+.photo-text-container {
+  border: 3px solid white;
+  border-radius: 5px;
+  padding: 0;
+  
+}
+.photo-text-wrapper {
+  height: 200px;
+  
+  background-color: white;
+  opacity: .6;
+  width: auto;
+  a {
+    opacity: 1;
+  }
+}
+
+.photo-text {
+  padding: 20px;
+  color: darken($grasscolor, 40%);
+}
+
+/*&+.photo-text-wrapper {
+  height: inherit;
+}*/
 
 @media(min-width:768px) {
     body {

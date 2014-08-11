@@ -77,6 +77,8 @@ GEM
     minitest (4.7.5)
     mongoid-paperclip (0.0.9)
       paperclip (>= 2.3.6)
+    mongoid-tags-arent-hard (1.1.5)
+      mongoid (>= 3.0.0)
     moped (2.0.0)
       bson (~> 2.2)
       connection_pool (~> 2.0)
@@ -168,6 +170,7 @@ DEPENDENCIES
   jquery-rails
   mongoid!
   mongoid-paperclip (~> 0.0.8)
+  mongoid-tags-arent-hard
   pry-rails (~> 0.3.2)
   rails (= 4.0.4)
   rails_12factor
