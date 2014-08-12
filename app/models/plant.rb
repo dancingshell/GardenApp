@@ -6,7 +6,8 @@ class Plant
   field :notes, type: String
 
   belongs_to :variety
-  accepts_nested_attributes_for :variety
+  # accepts_nested_attributes_for :varieties
   belongs_to :garden
   has_many :photos
+
 end

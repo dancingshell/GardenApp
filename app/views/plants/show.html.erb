@@ -1,4 +1,4 @@
-<h1><%= @plant.name %></h1>
+<h1 class="page-title"><%= @plant.name %></h1>
 
 <p>Variety: <%= @plant.variety.variety %></p>
 <p>Garden: <%= @plant.garden.name %></p>
@@ -6,7 +6,7 @@
 <p>Notes: <%= @plant.notes %></p>
 
 
-<%= link_to "See photos for this plant", plant_photos_path(@plant.id) %><br>
+<%= link_to "See photos for this plant", plant_photos_path(@plant.id), class: "btn btn-submit" %><br>
 
 
 

@@ -78,6 +78,7 @@ body {
   display: block;
 
   .btn-variety,
+  .btn-delete,
   .notes,
   input,
   select {
@@ -100,6 +101,11 @@ body {
     span {
       margin-right: 10px;
     }
+  }
+
+  .btn-delete {
+    margin-top: 365px;
+    color: white;
   }
 
   .btn-submit{
@@ -135,35 +141,32 @@ body {
 }
 
 .photo-container>div {
-  /*vertical-align: top;
-  max-width: 100%;
-  height: auto;
-  max-height: 100%;*/
   margin-top: 120px;
-  /*margin-right: auto;
-  margin-left: auto;
-  display: inline-block;
-  +.photo-text-wrapper{
-    height: 200px;
-    max-height: inherit;
-  }*/
 }
 
+.plants-text-container,
 .photo-text-container {
-  border: 3px solid white;
+  border: 5px solid white;
   border-radius: 5px;
   padding: 0;
-  
 }
+
+
+.plants-text-container{
+  height: 100px;
+  width: 100px;
+  margin-left: 5px;
+}
+
+.plants-content{
+  background-color: green;
+}
+
 .photo-text-wrapper {
   height: 200px;
-  
   background-color: white;
   opacity: .6;
   width: auto;
-  a {
-    opacity: 1;
-  }
 }
 
 .photo-text {

@@ -6,11 +6,11 @@
       <%= f.text_field :name, placeholder: "Name" %><br>
       <%= f.text_field :health, placeholder: "Health"%><br>
       <%= f.collection_select :variety_id, Variety.all, :id, :variety, :prompt => "Select Variety"%><br>
-      <div class="btn btn-warning btn-variety" data-toggle="modal"
-   data-target="#varietyModal" ng-click="varietyToggle()"><span class="glyphicon glyphicon-plus"></span>Add Variety</div>
+      <div class="btn btn-warning btn-variety" ng-click="varietyToggle()" data-toggle="modal"
+   data-target="#varietyModal"><span class="glyphicon glyphicon-plus"></span>Add Variety</div>
 
       <div ng-show="variety==true" class="variety row">
-      
+      test
       </div>
 
       </div>

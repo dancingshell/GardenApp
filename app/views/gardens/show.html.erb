@@ -1,11 +1,17 @@
-<h1>My <%= @garden.name %></h1>
+<h1 class="page-title">My <%= @garden.name %></h1>
 
-<p>Plants in my garden:</p>
-<ul>
-  <% @garden.plants.each do |p| %>
-  <li><%= link_to p.name, garden_plant_path(@garden, p.id) %></li>
-  <% end %>
-</ul>
+<p class="page-title">Plants in my garden:</p>
+
+<div class="plants-text-container">
+  <div class="plants-content">
+    <ul>
+      <% @garden.plants.each do |p| %>
+        <li><%= link_to p.name, garden_plant_path(@garden, p.id) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
 <%= link_to "Add new plant", new_garden_plant_path(@garden), class: "btn btn-submit btn-lg"  %>
 
 <%= link_to "Back to all gardens", gardens_path, class: "btn btn-submit btn-lg" %>
