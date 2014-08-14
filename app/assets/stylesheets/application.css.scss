@@ -153,13 +153,35 @@ body {
 
 
 .plants-text-container{
-  height: 100px;
-  width: 100px;
-  margin-left: 5px;
+  height: 250px;
+  width: auto;
+  max-width: 400px;
+  background: white;
+  text-align: center;
+  margin: 5px;
 }
 
-.plants-content{
-  background-color: green;
+/*.plants-text-container>.plant-background {
+  opacity: .6;
+}
+.plant-background>li {
+  opacity: 1.0;
+}
+*/
+.plant-text {
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 50px;
+  width: auto;
+  max-width: 150px;
+/*  color: red;*/
+  font-size: 30px;
+  text-decoration: none;
+  background-color: white;
+  background-image: url();
+  border-radius: 8px;
+  color: darken($grasscolor, 20%);
+  padding: 0px 60px;
 }
 
 .photo-text-wrapper {

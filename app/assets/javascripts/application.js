@@ -22,6 +22,7 @@ angular.module("gardenApp", []).controller("gardenCtrl", ['$scope', '$http', fun
 
   $scope.variety_count = 0;
   $scope.variety = false;
+  $scope.plant_submitted = false;
 
   $scope.varietyToggle = function(){
     if ($scope.variety_count % 2 == 0) {
@@ -35,6 +36,13 @@ angular.module("gardenApp", []).controller("gardenCtrl", ['$scope', '$http', fun
     $scope.variety_count += 1;
     console.log("adding");
   };
+
+
+  $scope.test = function(){
+    $scope.plant_submitted = true
+    alert("test!!!");
+    console.log("submitted");
+  }
 
   // $scope.varietyHide = function() {
   //   $scope.newVarity = false;

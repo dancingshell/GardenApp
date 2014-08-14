@@ -11,12 +11,8 @@ class PhotosController < ApplicationController
   end
 
   def show
-    @plant = Plant.where(id: params[:plant_id]).first
-    @id = params[:id]
-    @photo = Photo.find(@id)
-
+    @photo = Photo.find(params[:id])
   end
-
   # def create
   #   @photo = Photo.new(photo_params)
   #   if @photo.save

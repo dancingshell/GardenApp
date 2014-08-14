@@ -3,11 +3,14 @@
   <%= link_to "Edit Information", edit_user_path(current_user), class: "btn btn-success" %>
 
 </h1>
-<p><%= @user.name %> lives in a <%=link_to @user.climate.climate, climate_path(@user.climate_id)  %> climate, with planting zone <%= @user.climate.zone %>.</p>
+<% if @user.avatar.url %>
+  <%= image_tag @user.avatar.url, size: "100x100"%>
 
-<%= link_to "Delete #{@user.name}", :user, method: :delete, data: {confirm: 'Are you sure you want to delete it?'} %>
 
-<%= link_to "See all users", users_path %>
+<%= link_to "Delete #{@user.name}", :user, method: :delete, data: {confirm: 'Are you sure you want to delete it?'}, class: "btn btn-warning" %>
+<% end %>
+
+
 <h3>My Gardens</h3>
 <ul>
 <% @user.gardens.each do |g| %>

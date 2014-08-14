@@ -1,15 +1,3 @@
-<h1>Photos</h1>
+<h1 class="page-title">Photos <%= link_to "Add new photo", new_plant_photo_path, class: "btn btn-submit" %><%= link_to "Back to Garden", garden_path(@plant.garden), class: "btn btn-warning" %></h1>
 
-
-<% @photos.where(plant_id: params[:plant_id]).each do |p| %>
-
-
-
-<div class="row">
-    <div class="col-lg-2 col-sm-3 col-xs-4">
-      <%= link_to (image_tag p.image.url), plant_photo_path(@plant.id, p), class: "thumbnail img-responsive" %>
-    </div>
-  </div>
-<% end %>
-
-<%= link_to "Add new photo", new_plant_photo_path %>
+<%= render "partials/photoIndex" %>
