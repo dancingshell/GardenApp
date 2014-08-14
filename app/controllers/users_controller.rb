@@ -33,6 +33,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @zipcode = @user.zipcode
   end
 
   def update

@@ -14,7 +14,7 @@ GardenApp2::Application.routes.draw do
     resources :plants
   end
 
-  resources :plants do
+  resources  :plants do
     resources :photos
   end
 

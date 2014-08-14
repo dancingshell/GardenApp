@@ -1,10 +1,12 @@
 
-<h1 class="climate">Climates</h1><hr/>
+<h1 class="page-title">Climates</h1>
 <ul>
   <% @climates.each do |c| %>
+    <% if c.description %>
     <li>
-      <strong><%= c.climate =%></strong> -- Zone: <%= c.zone =%> <%= link_to "Show me more about climate!", climate_path(c)  %>
+    <%= link_to "Zone: #{c.zone}", climate_path(c) %> 
     </li>
+    <% end %> 
   <% end %>
 </ul>
 

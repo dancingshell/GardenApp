@@ -1,13 +1,10 @@
-<h1>
-  <%= @climate.climate %>
+<h1 class="page-title">
+  Zone: <%= @climate.zone %>
 </h1>
-<p>This climate is a <%= @climate.climate %> with planting zone: <%= @climate.zone %>.</p>
 
-<%= link_to "Delete #{@climate.climate}", :climate, method: :delete, data: {confirm: 'Are you sure you want to delete it?'} %>
+<%= @climate.description %>
 
-<%= link_to "Back to the list", climates_path %>
 
-<h3>Users in this climate:</h3>
-   <% @climate.users.each do |user| %>
-      <li><strong><%= p user.name %></strong></li>
-  <% end %>
+<%= link_to "See all climates", climates_path %>
+<%= link_to "Back to my profile", user_path(current_user) %>
+

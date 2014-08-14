@@ -7,7 +7,7 @@
       <%= f.password_field :password, placeholder: "Password" %>
       <%= f.password_field :password_confirmation, placeholder: "Repeat Password" %>
       <%= f.text_field :email, placeholder: "E-mail" %>
-      <%= f.text_field :zipcode, placeholder: "Zipcode" %>
+      <input type="text" value="<%= @zipcode.zipcode %>" name="zipcode">
       <%= image_tag @user.avatar.url%>
       <%= f.file_field :avatar %>
 

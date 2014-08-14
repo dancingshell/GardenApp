@@ -14,6 +14,7 @@
 
   def create
     garden = Garden.new(garden_params)
+    garden.date = Time.new
     garden.user = current_user
     if garden.save 
       redirect_to gardens_path
