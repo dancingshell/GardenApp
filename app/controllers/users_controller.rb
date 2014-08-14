@@ -17,12 +17,12 @@ class UsersController < ApplicationController
   # actually build the user
   def create
     @user = User.new(user_params)
-    @zipcode = Zipcode.all
-    @zipcode.each do |zip|
-      if @user.zipcode_id == zip.zipcode
-        @user.zipcode_id = zip
-      end
-    end
+    @user.zipcode = Zipcode.where(:query=> {"zipcode" => params[:zipcode].to_i}).to_a.first
+    # @zipcode.each do |zip|
+    #   if @user.zipcode_id == zip.zipcode
+    #     @user.zipcode_id = zip
+    #   end
+    # end
 
     if @user.save
       redirect_to new_session_path
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :password, :password_confirmation, :email, :zipcode_id, :avatar)
+    params.require(:user).permit(:name, :password, :password_confirmation, :email, :avatar)
   end
 
 end
