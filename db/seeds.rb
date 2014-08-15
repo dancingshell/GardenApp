@@ -34,11 +34,19 @@
     #   { name: "Sheila", email: "sheila@test.com", zipcode: "91745", climate: climates[1]}
     # ])
 
-    seasons = Season.create([
-      { season: "Winter"},
-      { season: "Spring"},
-      { season: "Summer"},
-      { season: "Autumn"}
+    # seasons = Season.create([
+    #   { season: "Winter"},
+    #   { season: "Spring"},
+    #   { season: "Summer"},
+    #   { season: "Autumn"}
+    # ])
+    
+    scores = Score.create([
+      { score: "1"},
+      { score: "2"},
+      { score: "3"},
+      { score: "4"},
+      { score: "5"}
     ])
 
     # gardens = Garden.create([

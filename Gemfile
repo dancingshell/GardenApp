@@ -46,6 +46,8 @@ gem "simple_form"
 gem 'rails_12factor'
 
 gem 'mongoid-tags-arent-hard'
+
+gem 'httparty'
 # Use unicorn as the app server
 # gem 'unicorn'
 

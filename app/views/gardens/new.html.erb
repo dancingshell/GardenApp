@@ -5,7 +5,7 @@
       <%= form_for @garden do |f| %>
       <%= f.text_field :name, placeholder: "Name" %>
       <%= f.text_field :shade, placeholder: "Shade" %>
-      <%= f.collection_select :season_id, Season.all, :id, :season, :prompt => "Select Season"%>
+      <%= f.select :season, [["Spring",0],["Summer",1],["Fall",2],["Winter",3]]%>
       <%= f.submit "Make Garden", class: "btn btn-submit" %>
     <% end %> 
   </div>

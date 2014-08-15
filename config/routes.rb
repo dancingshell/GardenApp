@@ -8,7 +8,9 @@ GardenApp2::Application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   # resources :photos
 
-  resources :users 
+  resources :users
+  resources :health
+  resources :notes 
 
   resources :gardens do
     resources :plants
