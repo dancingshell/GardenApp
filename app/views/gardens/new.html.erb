@@ -4,8 +4,9 @@
   <div class="col-md-3">
       <%= form_for @garden do |f| %>
       <%= f.text_field :name, placeholder: "Name" %>
-      <%= f.text_field :shade, placeholder: "Shade" %>
-      <%= f.select :season, [["Spring",0],["Summer",1],["Fall",2],["Winter",3]]%>
+      <%= f.select :shade, [["Full Sun"],["Partial Shade"],["Full Shade"],["Deep Shade"]], {}, {name: "shade"} %>
+      <%= f.select :season, [["Spring"],["Summer"],["Fall"],["Winter"]], {}, {name: "season"} %>
+  
       <%= f.submit "Make Garden", class: "btn btn-submit" %>
     <% end %> 
   </div>
