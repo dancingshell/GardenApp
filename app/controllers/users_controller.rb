@@ -24,12 +24,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.zipcode = Zipcode.where(:query=> {"zipcode" => params[:zipcode].to_i}).to_a.first
-    # @zipcode.each do |zip|
-    #   if @user.zipcode_id == zip.zipcode
-    #     @user.zipcode_id = zip
-    #   end
-    # end
-
     if @user.save
       redirect_to new_session_path
     else
