@@ -18,6 +18,7 @@
     garden.user = current_user
     # raise params[:season]
     garden.season = params[:season]
+    garden.shade = params[:shade]
     if garden.save 
       redirect_to gardens_path
     else
@@ -45,7 +46,7 @@
   end
 
   def garden_params
-    params.require(:garden).permit(:name, :shade, :season, :user_id)
+    params.require(:garden).permit(:name, :user_id)
   end
 
 end
