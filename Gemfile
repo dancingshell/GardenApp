@@ -42,13 +42,13 @@ gem 'bcrypt', '~> 3.1.7'
 gem "mongoid-paperclip", "~> 0.0.8", :require => "mongoid_paperclip"
 gem "aws-s3", :require => "aws/s3"
 
-# gem "simple_form"
+gem "simple_form"
 
 gem 'rails_12factor'
 
-# gem 'mongoid-tags-arent-hard'
+gem 'mongoid-tags-arent-hard'
 
-# gem 'httparty'
+gem 'httparty'
 # Use unicorn as the app server
 # gem 'unicorn'
 
