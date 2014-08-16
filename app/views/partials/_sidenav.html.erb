@@ -18,7 +18,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-home"> Dashboard</span><b class="caret"></b></a>
           <ul class="dropdown-menu alert-dropdown">
             <li>
-                <a href="<%= climate_path(current_user.zipcode.climate) %>">My Climate</a>
+                <a href="<%= climate_path(current_user.zipcode.climate) if current_user.zipcode.climate %>">My Climate</a>
             </li>
             <li>
                 <a href="<%= climates_path %>"> All Climates</a>
