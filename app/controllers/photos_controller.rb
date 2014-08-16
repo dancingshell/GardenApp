@@ -43,7 +43,7 @@ class PhotosController < ApplicationController
   #   end
 
   def tagger(str)
-    str = str.split(" ").each { |s| s = s[-1] = "" if s[-1] == "," }
+    str = str.split(" ").each { |s| s << "," if s[-1] != "," }
   end
 
   private
