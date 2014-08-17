@@ -1,29 +1,30 @@
 <div class="container">
+
 <% if current_user %>
-<h3><%= current_user.name %>'s Gardens:  <%= link_to "Add a new garden", new_garden_path, class: "btn btn-submit" %></h3>
+<h1 class="page-title"><%= current_user.first_name %>'s Gardens:
+  <a class="btn btn-submit" href="<%= new_garden_path %>"><span class="glyphicon glyphicon-plus"></span> Add a new garden</a>
+</h1>
   <div class="row-fluid row">
+
     <% @gardens.each do |g| %>
+
       <% if g.user == current_user %>
-        <a class "garden_container" href="<%= garden_path(g) %>">
-
-          <div class="col-md-4 text-center container-fluid garden_box">
-
-            <div class="garden_title">
-              <a class="btn btn-garden" href="<%= garden_path(g) %>">
-                <%= g.name.upcase %>
-              </a>
-            </div>
-            
-            <div class="garden">
-              <a class="btn btn-lg" href="<%= garden_path(g) %>">View Garden</a>
-              <a class="btn btn-lg" href="<%= new_garden_plant_path(g) %>">Add Plant</a>
-            </div>
-
-          </div>
-        </a>
-
+      <div class="col-md-4 text-center">
+        <div class="circle"><a href="<%= garden_path(g) %>">
+          <div class="garden-text">
+          <%= link_to g.name, garden_path(g), class: "garden-text text-center" %><br>
+          <a class="btn btn-sm" href="<%= garden_path(g) %>">View Garden</a>
+          <a class="btn btn-sm" href="<%= new_garden_plant_path(g) %>">Add Plant</a>
+          </div></a>
+        </div>
+      </div>
       <% end %>
+
+<!--     end garden filter for current user -->
     <% end %>
+<!--     end do loop -->
   </div>
   <% end %>
+ <!--  end if current user -->
 </div>
+<!-- end container -->

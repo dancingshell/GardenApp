@@ -30,7 +30,37 @@ body{
   }
 }
 
-.garden_container {
+
+.circle {
+  width: 300px;
+  height: 300px;
+  background: darken($grasscolor, 20%) url('sunf.png') -35px 40px no-repeat;
+  background-size: 350px;
+  border-radius: 5px;
+/*  opacity: .6;*/
+  margin-top: 60px;
+}
+.garden-text{
+  text-align: center;
+ /* margin-left: -25px;*/
+  display: block;
+  opacity: 1.0;
+  padding-top: 0px;
+  color: white;
+  font-size: 30px;
+  .btn-sm {
+    margin-top: 178px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 14px;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/*.garden_container {
   text-align: center;
 }
 
@@ -69,8 +99,8 @@ body{
         text-decoration: none;
         color: darken($grasscolor, 40%);
       }
-    }
-
+    }*/
+/*
     div {
       margin-top: 30px;
       margin-left: 10px;
@@ -87,7 +117,7 @@ body{
       }
     }  
   }
-}
+}*/
 
 .garden {
   -webkit-box-shadow: 0px 20px 5px -3px rgba(0,0,0,1);

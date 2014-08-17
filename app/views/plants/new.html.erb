@@ -1,4 +1,7 @@
-<h1 class="page-title">New Plant</h1>
+<h1 class="page-title">Add a plant to your <%= @garden.name %>
+<!-- Check to see if the word garden is in the name of the garden  -->
+<!-- If not add "garden" to title -->
+<%= " garden" if @garden.name.split(" ").last.downcase != "garden" %></h1>
 
 <%= form_for @plant, {url: garden_plants_path(@garden)} do |f| %>
   <div class="signup row">
@@ -9,6 +12,7 @@
       
       <div ng-click="test()"><%= f.submit "Submit",  class: "btn btn-submit"%></div>
     </div>
+<% end %> 
  <!--    This will show up when they submit (add variety to plant) -->
     <div class="col-md-3">
 
@@ -19,7 +23,7 @@
     </div>
   </div>
   
-<% end %> 
+
 
 <%= render "partials/varietyModal" %>
   
