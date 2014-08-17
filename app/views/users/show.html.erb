@@ -1,11 +1,11 @@
 <h1>
-  <%= @user.name %>
+  <%= @user.first_name + " " + @user.last_name %>
   <%= link_to "Edit Information", edit_user_path(current_user), class: "btn btn-success" %>
 
 </h1>
 <%= render "partials/avatar" %>
 
-<%= link_to "Delete #{@user.name}", :user, method: :delete, data: {confirm: 'Are you sure you want to delete it?'}, class: "btn btn-warning" %>
+
 
 <h3>My Gardens</h3>
 <ul>
@@ -19,5 +19,6 @@
 Temp high: <%= @weather["list"][0]["temp"]["max"] %><br>
 Temp low: <%= @weather["list"][0]["temp"]["min"] %>
 <% end %>
+<br>
 
-  
+<%= link_to "Delete your account...", :user, method: :delete, data: {confirm: 'Are you sure you want to delete it?'}, class: "btn btn-danger" %>

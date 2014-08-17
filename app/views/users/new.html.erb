@@ -3,6 +3,19 @@
   <div class="signup-header">
     <h1 class="page-title">Welcome!</h1>
     <h2 class="page-title">Enter your information.</h2>
+
+    <% if @user.errors.any? %>
+      <div id="error_explanation" class="signup">
+        <h4 class="page-title"><%= pluralize(@user.errors.count, "error") %> prohibited this feature from being saved:</h4>
+
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <div class="signup row">
       <%= form_for @user do |f| %>
         <div class="col-md-3">
@@ -13,9 +26,9 @@
           <%= f.text_field :email, placeholder: "E-mail" %><br>
           <input type="text" name="zipcode" placeholder="Zipcode"><br>
        
-          <%= f.file_field :avatar %>
+          <%#= f.file_field :avatar %>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <%= f.submit "Sign Up!", class: "btn btn-submit" %>
         </div>
       <% end %> 

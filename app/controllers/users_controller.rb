@@ -22,14 +22,40 @@ class UsersController < ApplicationController
 
   # actually build the user
   def create
+    @is_signup = true
     @user = User.new(user_params)
-    @user.zipcode = Zipcode.where(:query=> {"zipcode" => params[:zipcode].to_i}).to_a.first
+    # @user.zipcode = Zipcode.where(:query=> {"zipcode" => params[:zipcode].to_i}).to_a.first
+    # format.html { redirect_to root_path, notice: 'Feature was successfully created.' }
+    #     format.json { render action: 'show', status: :created, location: @feature }
     if @user.save
-      redirect_to new_session_path
+      session[:user_id] = @user.id.to_s
+      redirect_to gardens_path
     else
-      render 'new'
+      respond_to do |format|
+        format.html { render action: 'new' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
     end
   end
+
+  # def create
+  #   @user = User.new(params.require(:user).permit(:username, :email, :password, :password_confirmation, :image))
+
+  #   if @user.save
+  #     session[:user_id] = @user.id.to_s
+  #     redirect_to locations_path
+  #   else
+  #     respond_to do |format|
+  #       format.html { render action: 'new' }
+  #       format.json { render json: @user.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
+
+
+
+
 
   def edit
     @user = User.find(params[:id])
@@ -52,7 +78,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :password, :password_confirmation, :email, :avatar)
+    params.require(:user).permit(:first_name, :last_name, :password, :password_confirmation, :email, :zipcode, :avatar)
   end
 
 end
