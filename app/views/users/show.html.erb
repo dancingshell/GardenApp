@@ -13,7 +13,7 @@
 <li><%= link_to g.name, garden_path(g) %></li>
 <% end %>
 </ul>
-<h3><%= link_to "My Climate Zone Number -- #{current_user.zipcode.climate.zone}", climate_path(current_user.zipcode.climate) %></h3>
+<h3><%#= link_to "My Climate Zone Number -- #{current_user.zipcode.climate.zone}", climate_path(current_user.zipcode.climate) %></h3>
 
 <% if @weather["cod"] == "200" %>
 Temp high: <%= @weather["list"][0]["temp"]["max"] %><br>

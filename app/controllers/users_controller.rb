@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    zipcode = @user.zipcode.zipcode
+    zipcode = @user.zipcode
   
     url = HTTParty.get("http://api.openweathermap.org/data/2.5/forecast/daily?q=#{zipcode},USA&mode=json&units=imperial&cnt=1")
     @weather = JSON.parse(url.body)
