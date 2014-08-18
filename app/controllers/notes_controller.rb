@@ -1,12 +1,12 @@
 class NotesController < ApplicationController
   def new
     @plant = Plant.where(id: params[:plant_id]).first
-    @note = @plant.notes.create
+    @note = @plant.Note.new
   end
 
   def create
     @plant = Plant.where(id: params[:plant_id]).first
-    @note = @plant.notes.create(params.require(:note).permit(:note, :date, :plant_id))
+    @note = @plant.note.new(params.require(:note).permit(:note, :date, :plant_id))
   end
 
   def show

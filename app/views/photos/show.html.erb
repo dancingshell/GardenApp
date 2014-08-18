@@ -4,16 +4,6 @@
 
   </div>
 
-  <div class="photo-text-container col-md-3">
-    <div class="photo-text-wrapper">
-      <div class="photo-text">
-        <h1>
-        <%= @photo.image_file_size %>
-        <%= @photo.tags unless @photo.tags == nil %>
-        </h1>
-      </div>
-      
-    </div>
-  </div>
-  <a class="btn btn-submit" href="<%= %>">Put function here <br>that calls to add tags<br>(maybe use angular) </a>
+  
+  <a class="btn btn-submit" href="<%= garden_plant_path(@garden, @plant) %>">Back to plant</a>
 </div>

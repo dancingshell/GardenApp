@@ -1,0 +1,15 @@
+<h1 class="page-title">Edit your garden</h1>
+
+<div class="signup row">
+  <div class="col-md-3">
+      <%= form_for @garden do |f| %>
+      <%= f.text_field :name, placeholder: "Name your garden" %>
+      <%= f.select :shade, [["Full Sun"],["Partial Shade"],["Full Shade"],["Deep Shade"]], {}, {name: "shade"} %>
+      <%= f.select :season, [["Spring"],["Summer"],["Fall"],["Winter"]], {}, {name: "season", default: "Select season"} %>
+  
+      <%= f.submit "Edit Garden", class: "btn btn-submit" %>
+    <% end %> 
+  </div>
+<div class="col-md-3 col-md-offset-6">
+  <a class="btn btn-submit" href="<%= gardens_path %>"><span class="glyphicon glyphicon-chevron-left"></span> Back to all Gardens</a>
+</div>

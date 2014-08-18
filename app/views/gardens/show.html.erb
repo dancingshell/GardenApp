@@ -3,7 +3,9 @@
 <div class="row sidebar-row">
   <div class="col-md-3">
     <%= link_to "Add new plant", new_garden_plant_path(@garden), class: "btn btn-submit btn-lg"  %>
+    <%= link_to "Edit garden", edit_garden_path(@garden), class: "btn btn-submit btn-lg" %>
     <%= link_to "Back to all gardens", gardens_path, class: "btn btn-submit btn-lg" %>
+
   </div>
 <!--   display all gardens -->
   <% @garden.plants.each do |p| %>
@@ -12,8 +14,8 @@
         <div class="text-center row">
           <a class="plant-text"  href="<%= garden_plant_path(@garden, p.id) %>"><%= p.name %></a>
           <div class="plant-hover">
-            <a href="<%= edit_plant_path(p) %>">Edit</a>
-            <a href="<%= new_note_path %>">Add Status Update</a>
+            <a href="<%= garden_plant_path(@garden, p) %>">View</a>
+            
           </div>
         </div>
       </div>  

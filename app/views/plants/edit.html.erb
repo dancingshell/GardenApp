@@ -1,0 +1,20 @@
+<h1 class="page-title">Edit your <%= @plant.name %>
+<!-- Check to see if the word garden is in the name of the garden  -->
+<!-- If not add "garden" to title -->
+<%#= " Garden" if @garden.name.split(" ").last.downcase != "garden" %></h1>
+<%= form_for @plant, {url: garden_plants_path(@garden)} do |f| %>
+  <div class="signup row">
+    <div class="col-md-3">
+      <%= f.text_field :name, placeholder: "Name" %><br>
+      <%= f.submit "Submit",  class: "btn btn-submit"%>
+    </div>
+<% end %> 
+ <!--    This will show up when they submit (add variety to plant) -->
+    <div class="col-md-3">
+
+    </div>
+  <!--   end variety selector -->
+    <div class="col-md-3 col-md-offset-3">
+      <a class="btn btn-submit" href="<%= gardens_path %>"><span class="glyphicon glyphicon-th-large"></span> Back to all Gardens</a>
+    </div>
+  </div>

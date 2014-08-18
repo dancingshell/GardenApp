@@ -33,7 +33,7 @@
   def update
     @garden = Garden.find(params[:id])
     if @garden.update_attributes(garden_params)
-      redirect_to gardens_path
+      redirect_to garden_path(@garden)
     else
       render 'edit'
     end
