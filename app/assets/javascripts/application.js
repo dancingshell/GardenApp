@@ -77,6 +77,14 @@ angular.module("gardenApp", []).controller("gardenCtrl", ['$scope', '$http', fun
     }
   }
 
+  $scope.hover = false;
+  $scope.hover = function() {
+    $scope.hover = true;
+  }
+  $scope.unhover = function() {
+    $scope.hover = false;
+  }
+
   // $scope.varietyHide = function() {
   //   $scope.newVarity = false;
   // }

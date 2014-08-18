@@ -1,24 +1,24 @@
-<h1 class="page-title">Edit your information</h1>
+<h1 class="page-title">Edit your information</h1><a class="btn btn-submit signup" href="<%= user_path(current_user) %>"><span class="glyphicon glyphicon-chevron-left"></span> Back to Profile</a>
 
 <div class="signup row">
   <div class="col-md-3">
     <%= form_for @user do |f| %>
-      <%= f.text_field :name, placeholder: "Name" %>
+      <%= f.text_field :first_name, placeholder: "First name" %>
+      <%= f.text_field :first_name, placeholder: "Last Name" %>
       <%= f.password_field :password, placeholder: "Password" %>
       <%= f.password_field :password_confirmation, placeholder: "Repeat Password" %>
       <%= f.text_field :email, placeholder: "E-mail" %>
       <%= f.text_field :zipcode, placeholder: "Zipcode" %><br>
-      <!-- <input type="text" value="<%= @zipcode.zipcode %>" name="zipcode"> -->
-      <%= render "partials/avatar" %>
-      <%= f.file_field :avatar %>
-
-      <%= f.submit "Edit", class: "btn btn-submit" %>
-      
-    <% end %>
   </div>
   <div class="col-md-3">
-    <%= link_to "Delete Account", user_path(current_user),class: "btn btn-delete btn-warning", method: :delete, data: {confirm: "Are you sure you want to delete your account? This process is not reversable."} %>
+      <h3>Edit profile picture</h3>
+        <%= render "partials/avatar" %>
+        <%= f.file_field :avatar %>
+
+        <%= f.submit "Edit", class: "btn btn-submit" %>
   </div>
-<div class="col-md-3 col-md-offset-3">
-<a class="btn btn-submit" href="<%= user_path(current_user) %>"><span class="glyphicon glyphicon-chevron-left"></span> Back to Profile</a>
-</div>
+    <% end %>
+  <div class="col-md-3 col-md-offset-3">
+    <%= link_to "Delete your account...", :user, method: :delete, data: {confirm: 'Are you sure you want to delete it?'}, class: "btn btn-danger" %>
+
+  </div>

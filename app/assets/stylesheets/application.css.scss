@@ -74,7 +74,38 @@ body {
       }
   }
 }
+.box{
+  text-align: center;
+  background-color: green;
+  width: 300px;
+  min-height: 300px;
+  padding: 20px;
+  margin: 0px, 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: darken($grasscolor, 10%);
 
+  .page-title{
+    font-family: "lobster";
+    color: darken($grasscolor, 30%);
+  }
+}
+
+.temp {
+  margin-top: 20px;
+  font-size: 30px;
+  line-height: 15px;
+}
+
+.list-all-plant {
+  padding: 10px;
+  background-color: darken($grasscolor, 30%);
+}
+
+.all-plant-details {
+  margin-left: 10px;
+  color: darken($grasscolor, 25%);
+}
 .signup {
   margin-top: 20px;
 
@@ -165,16 +196,9 @@ body {
   margin: 5px;
 }
 
-/*.plants-text-container>.plant-background {
-  opacity: .6;
-}
-.plant-background>li {
-  opacity: 1.0;
-}
-*/
 
 .text-row {
-  background-color: white;
+  background-color: lighten($orangecolor, 22%);
   border-radius: 5px;
   height: 100px;
   margin: 10px;
@@ -182,12 +206,11 @@ body {
 }
 .plant-text {
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 50px;
-  width: 500px;
+  width: 100px;
   max-width: 300px;
-/*  color: red;*/
-  font-size: 25px;
+  font-size: 40px;
   text-decoration: none;
   border-radius: 8px;
   color: darken($grasscolor, 20%);
@@ -196,6 +219,20 @@ body {
     color: darken($grasscolor, 30%);
     text-decoration: none;
   }
+}
+
+.plant-hover {
+  margin-top: 10px;
+
+}
+.plant-hover>a {
+ padding: 0px 50px;
+  font-size: 20px;
+  color: darken($orangecolor, 20%); 
+  &:hover{
+    text-decoration:none;
+    color: darken($orangecolor, 30%); 
+  }  
 }
 
 .photo-text-wrapper {

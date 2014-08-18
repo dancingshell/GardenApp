@@ -18,7 +18,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-home"> Dashboard</span><b class="caret"></b></a>
           <ul class="dropdown-menu alert-dropdown">
             <li>
-                <a href="<%#= climate_path(current_user.zipcode.climate) if current_user.zipcode.climate %>">My Climate</a>
+                <a href="<%= user_path(current_user) %>">Weather</a>
             </li>
             <li>
                 <a href="<%= climates_path %>"> All Climates</a>
@@ -26,15 +26,7 @@
 
             <li class="divider"></li>
             <li>
-                <a href="#">Season</a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <%= link_to "Gardeners", session_path, method: :delete %>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <%= link_to "Around Me", session_path, method: :delete %>
+              <%= link_to "Around Me", users_path %>
             </li>
           </ul>
         </li>
@@ -77,11 +69,11 @@
               <li>
                 <a href="<%= user_path(current_user)%>">Profile</a>
               </li>
-              <li>
+              <!-- <li>
                 <a href="#">Inbox</a>
-              </li>
+              </li> -->
               <li>
-                <a href="#">Settings</a>
+                <a href="<%= edit_user_path(current_user) %>">Settings</a>
               </li>
               <li class="divider"></li>
               <li>

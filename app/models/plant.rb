@@ -3,8 +3,6 @@ class Plant
   include Mongoid::Attributes::Dynamic
   field :name, type: String
   field :plant_method, type: String
-  # field :health, type: String
-  # field :note, type: String
 
   belongs_to :variety
 
