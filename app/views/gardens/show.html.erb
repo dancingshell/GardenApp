@@ -7,11 +7,11 @@
   </div>
 <!--   display all gardens -->
   <% @garden.plants.each do |p| %>
-    <div class="col-md-6 col-md-offset-1" ng-mouseenter="hover()" ng-mouseleave="unhover()">
+    <div class="col-md-6 col-md-offset-1">
       <div class="text-row" >
         <div class="text-center row">
           <a class="plant-text"  href="<%= garden_plant_path(@garden, p.id) %>"><%= p.name %></a>
-          <div class="plant-hover" ng-show="hover" ng-hide="hover != true">
+          <div class="plant-hover">
             <a href="<%= edit_plant_path(p) %>">Edit</a>
             <a href="<%= new_note_path %>">Add Status Update</a>
           </div>

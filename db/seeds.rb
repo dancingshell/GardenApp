@@ -41,13 +41,13 @@
     #   { season: "Autumn"}
     # ])
     
-    scores = Score.create([
-      { score: "1"},
-      { score: "2"},
-      { score: "3"},
-      { score: "4"},
-      { score: "5"}
-    ])
+    # scores = Score.create([
+    #   { score: "1"},
+    #   { score: "2"},
+    #   { score: "3"},
+    #   { score: "4"},
+    #   { score: "5"}
+    # ])
 
     # gardens = Garden.create([
     #   { name: "vegetable", shade: "full_sun", season: seasons[0] },
