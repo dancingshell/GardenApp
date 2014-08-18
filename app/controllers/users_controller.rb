@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @weather
+    # @plants = @users.plants
   end
 
   def show

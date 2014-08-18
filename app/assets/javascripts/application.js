@@ -43,6 +43,39 @@ angular.module("gardenApp", []).controller("gardenCtrl", ['$scope', '$http', fun
     alert("test!!!");
     console.log("submitted");
   }
+  
+  
+
+  // $scope.next = function(tab){
+  //   $scope.home = false;
+  //   $scope.tab = true;
+  // }
+
+  $scope.home = true;
+
+  $scope.active = function(tab) {
+    $scope.home = false;
+    $scope.profile = false;
+    $scope.messages = false;
+    $scope.settings = false;
+
+    if (tab == "home") {
+      $scope.home = true;
+      console.log("home");
+    }
+    else if (tab == "profile") {
+      $scope.profile = true;
+      console.log("profile");
+    }
+    else if (tab == "messages") {
+      $scope.messages = true;
+      console.log("message");
+    }
+    else if (tab == "settings") {
+      $scope.setting = true;
+      console.log("settings");
+    }
+  }
 
   // $scope.varietyHide = function() {
   //   $scope.newVarity = false;

@@ -1,4 +1,8 @@
 GardenApp2::Application.routes.draw do
+  get "notes/new"
+  get "notes/create"
+  get "notes/show"
+  get "notes/index"
   # get "photos/index"
   # get "photos/new"
   # get "photos/show"

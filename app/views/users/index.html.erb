@@ -1,10 +1,12 @@
-<h1 class="user">Users!!!</h1><hr/>
-<ul>
-  <% @users.each do |u| %>
-    <li>
-      <strong><%= u.first_name + " " + u.last_name =%></strong> --  <%= link_to "Show me more about user!", user_path(u)  %>
-    </li>
-  <% end %>
-  <%= link_to "Sign Up!", new_user_path %>
+<h1 class="page-title">Around Me</h1> 
 
+<h3>Recently Planted</h3>
+<ul>
+<% @users.each do |user| %>
+  <% user.gardens.each do |garden| %>
+      <% garden.plants.each do |plant| %>
+        <li><%= plant.name %></li>
+    <% end %>
+  <% end %>
+<% end %>
 </ul>

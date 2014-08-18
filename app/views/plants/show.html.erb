@@ -11,13 +11,13 @@
       <a class="btn btn-submit" href="<%= garden_path(@garden) %>"><span class="glyphicon glyphicon-th-large"></span> Back to <%= @garden.name %></a>
     </div>
     <div class="row">
-        <div class="col-md-3 col-md-offset-">
+        <div class="col-md-3 col-md-offset-3">
           <%= link_to "See photos", plant_photos_path(@plant.id), class: "btn btn-submit" %>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <%= link_to "Add photo", new_plant_photo_path(@plant.id), class: "btn btn-submit" %>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <%= link_to "Add health status", new_health_path, class: "btn btn-submit" %>
         </div>
     </div>

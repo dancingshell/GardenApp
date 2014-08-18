@@ -1,24 +1,32 @@
 <h1 class="page-title">My <%= @garden.name %><%= " Garden" if @garden.name.split(" ").last.downcase != "garden" %>
 </h1>
-<div class="row">
+<div class="row sidebar-row">
   <div class="col-md-3">
     <%= link_to "Add new plant", new_garden_plant_path(@garden), class: "btn btn-submit btn-lg"  %>
-  </div>
-  <div class="col-md-3 col-md-offset-6">
     <%= link_to "Back to all gardens", gardens_path, class: "btn btn-submit btn-lg" %>
   </div>
 </div>
+  
 
-  <div class="row">
+
+  
+<div class="row">
+    <div class="col-md-3"></div>
+    <% plant_counter = 0 %>
     <% @garden.plants.each do |p| %>
-    <div class="col-md-3">
-      <div class="plants-text-container">
-      </div>
-      <div class="text-center">
-        <a class="plant-text" href="<%= garden_plant_path(@garden, p.id) %>"><%= p.name %></a>
-     <!--  -->
-      </div>
-    </div>
+
+      <% plant_counter += 1 %>
+<!-- accounts for left column of buttons -->
+      <% if plant_counter % 3 != 0 %>
+        <div class="col-md-3">
+      <% else %>
+        <div class="col-md-3 col-md-offset-3">
+      <% end %>
+          <div class="plants-text-container"></div>
+          <div class="text-center">
+            <a class="plant-text" href="<%= garden_plant_path(@garden, p.id) %>"><%= p.name %></a>
+          </div>
+        </div>
     <% end %>
 </div>
   

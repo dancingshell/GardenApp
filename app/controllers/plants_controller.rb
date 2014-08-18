@@ -22,12 +22,15 @@ class PlantsController < ApplicationController
 
   def new
     @plant = Plant.new
+    @note = @plant.notes.build
   end
 
   def create
     @plant = @garden.plants.new(params.require(:plant).permit(:name, :health, :notes, :variety_id))
+    @plant.plant_method = params[:plant_method]
     if @plant.save
-      redirect_to garden_path(@garden)
+      # redirect_to garden_path(@garden)
+      render 'new'
     else
       render 'new'
     end
@@ -51,6 +54,7 @@ class PlantsController < ApplicationController
     @plant.destroy
     redirect_to plants_path
   end
+
 
   private
   def get_garden

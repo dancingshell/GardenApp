@@ -13,19 +13,13 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find(params[:id])
   end
-  # def create
-  #   @photo = Photo.new(photo_params)
-  #   if @photo.save
-  #     redirect_to photos_path
-  #   end
-  # end
 
-   def create
-    # Find our parent decision that we should attach to
+
+  def create
     @photo = @plant.photos.new(photo_params)
     @photo.date ||= DateTime.now
-    # @tags = tagger(tags)
-    @photo.tags = tagger(@photo.tags)
+    @tags = tagger(:tags)
+    # @photo.tags = tagger(@photo.tags)
     # Attach this criterion to a decision
     if @photo.save
       redirect_to plant_photos_path(@plant.id)
@@ -34,16 +28,8 @@ class PhotosController < ApplicationController
     end
   end
 
-
-  # @plant = @garden.plants.new(params.require(:plant).permit(:name, :health, :notes, :variety))
-  #   if @plant.save
-  #     redirect_to garden_path(@garden)
-  #   else
-  #     render 'new'
-  #   end
-
   def tagger(str)
-    str = str.split(" ").each { |s| s << "," if s[-1] != "," }
+    str = str.to_s.split(" ").each { |s| s << ", " if s[-1] != "," }.join
   end
 
   private
