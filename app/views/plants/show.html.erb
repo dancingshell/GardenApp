@@ -9,7 +9,7 @@
       
       <%= link_to "Add photo", new_plant_photo_path(@plant.id), class: "btn btn-submit" %>
       <%= link_to "Add health status", new_health_path, class: "btn btn-submit" %>
-      <%= link_to "Edit plant", edit_plant_path(@plant.id), class: "btn btn-submit" %>
+      <%= link_to "Edit plant", edit_garden_plant_path(@garden.id, @plant.id), class: "btn btn-submit" %>
 
     </div>
     <% end %> 

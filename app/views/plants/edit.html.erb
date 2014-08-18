@@ -2,11 +2,12 @@
 <!-- Check to see if the word garden is in the name of the garden  -->
 <!-- If not add "garden" to title -->
 <%#= " Garden" if @garden.name.split(" ").last.downcase != "garden" %></h1>
-<%= form_for @plant, {url: garden_plants_path(@garden)} do |f| %>
+<%= form_for @plant, {url: garden_plant_path(@garden, @plant)} do |f| %>
   <div class="signup row">
     <div class="col-md-3">
       <%= f.text_field :name, placeholder: "Name" %><br>
       <%= f.submit "Submit",  class: "btn btn-submit"%>
+      <%= link_to "Delete plant...", @plant, method: :delete%>
     </div>
 <% end %> 
  <!--    This will show up when they submit (add variety to plant) -->

@@ -30,23 +30,23 @@ class PlantsController < ApplicationController
 
   def edit
     @garden = Garden.where(id: params[:garden_id]).first
-    @plant = @garden.plant.find(params[:id])
+    @plant = @garden.plants.find(params[:id])
   end
 
   def update
-    @plant = @garden.plants.new(params.require(:plant).permit(:name, :health, :notes, :variety_id))
+    @garden = Garden.where(id: params[:garden_id]).first
+    @plant = @garden.plants.find(params[:id])
     if @plant.update_attributes(params.require(:plant).permit(:name, :health, :notes, :variety_id))
-      redirect_to garden_plant_path(@garden)
+      redirect_to garden_plant_path(@garden, @plant)
     else
       render 'edit'
     end
   end
 
   def destroy
-    @garden = Garden.where(id: params[:garden_id]).first
-    @plant = @garden.plant.find(params[:id])
+    @plant = Plant.find(params[:id])
     @plant.destroy
-    redirect_to plants_path
+    redirect_to gardens_path(@garden)
   end
 
 
