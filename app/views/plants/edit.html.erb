@@ -6,8 +6,8 @@
   <div class="signup row">
     <div class="col-md-3">
       <%= f.text_field :name, placeholder: "Name" %><br>
-      <%= f.submit "Submit",  class: "btn btn-submit"%>
-      <%= link_to "Delete plant...", @plant, method: :delete%>
+      <%= f.submit "Edit",  class: "btn btn-submit"%>
+      <%= link_to "Delete plant...", @plant, method: :delete, class: "btn btn-submit btn-warning"%>
     </div>
 <% end %> 
  <!--    This will show up when they submit (add variety to plant) -->
