@@ -7,22 +7,26 @@ class PhotosController < ApplicationController
   end
 
   def new
+    @garden
     @photo =Photo.new
   end
 
   def show
+    @garden
     @photo = Photo.find(params[:id])
   end
 
 
   def create
+    @plant
     @photo = @plant.photos.new(photo_params)
     @photo.date ||= DateTime.now
     @tags = tagger(:tags)
+    @garden
     # @photo.tags = tagger(@photo.tags)
     # Attach this criterion to a decision
     if @photo.save
-      redirect_to plant_photos_path(@plant.id)
+      redirect_to garden_plant_path(@garden, @plant)
     else
       render 'new'
     end
@@ -39,5 +43,6 @@ class PhotosController < ApplicationController
 
   def get_plant
     @plant = Plant.where(:id => params[:plant_id]).first
+    @garden = @plant.garden
   end
 end

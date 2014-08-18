@@ -1,9 +1,9 @@
 <div class= "photo-container text-center row">
-
   <div class="photo col-md-6 col-md-offset-3">
-    <%= link_to (image_tag @photo.image.url), plant_photos_path, class: "thumbnail img-responsive" %>
+    <%= link_to "(image_tag @plant.image.url)", garden_plant_path(@garden, @plant), class: "thumbnail img-responsive" %>
 
   </div>
+
   <div class="photo-text-container col-md-3">
     <div class="photo-text-wrapper">
       <div class="photo-text">

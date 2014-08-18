@@ -1,0 +1,21 @@
+<h1 class="page-title">Add a plant to your <%= @garden.name %>
+<!-- Check to see if the word garden is in the name of the garden  -->
+<!-- If not add "garden" to title -->
+<%= " Garden" if @garden.name.split(" ").last.downcase != "garden" %></h1>
+
+  <!-- Nav tabs -->
+<ul class="nav nav-tabs page-title" role="tablist">
+  <li ng-click='active("home")'><a href="#home" role="tab" data-toggle="tab">Plant It</a></li>
+  <li ng-class='{active: profile == true}'><a href="#profile"  role="tab" data-toggle="tab">Details</a></li>
+  <li ng-click='active("messages")'><a href="#messages" role="tab" data-toggle="tab">Variety</a></li>
+  <li ng-click='active("settings")'><a href="#settings" role="tab" data-toggle="tab">Photos</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+
+  <div class="tab-pane" id="home"> </div>
+  <div class="tab-pane active" id="profile">...</div>
+  <div class="tab-pane" id="messages">...</div>
+  <div class="tab-pane" id="settings">...</div>
+</div>

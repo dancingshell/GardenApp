@@ -1,29 +1,32 @@
-<h1 class="page-title"><%= @plant.name %></h1>
+<h1 class="page-title"><%= @plant.garden.name %><a class="btn btn-submit" href="<%= garden_path(@garden) %>">  <span class="glyphicon glyphicon-th-large"></span> Back to all gardens</a></h1>
+
+<h2 class="page-title"><%= @plant.name %></h2>
 
 <%= form_for @plant, {url: garden_plants_path(@garden)} do |f| %>
   <div class="signup row">
     <div class="col-md-3">
 
-      <p>Garden: <%= @plant.garden.name %></p><br>
-      <p>Health: <%= @plant.health %></p><br>
-      <p>Notes: <%= @plant.notes %></p><br></div>
-    <div class="col-md-3 col-md-offset-6">
-      <a class="btn btn-submit" href="<%= garden_path(@garden) %>"><span class="glyphicon glyphicon-th-large"></span> Back to <%= @garden.name %></a>
+      
+      <%= link_to "Add photo", new_plant_photo_path(@plant.id), class: "btn btn-submit" %>
+      <%= link_to "Add health status", new_health_path, class: "btn btn-submit" %>
+      <%= link_to "Edit plant", edit_plant_path(@plant.id), class: "btn btn-submit" %>
+
     </div>
-    <div class="row">
-        <div class="col-md-3 col-md-offset-3">
-          <%= link_to "See photos", plant_photos_path(@plant.id), class: "btn btn-submit" %>
-        </div>
-        <div class="col-md-3">
-          <%= link_to "Add photo", new_plant_photo_path(@plant.id), class: "btn btn-submit" %>
-        </div>
-        <div class="col-md-3">
-          <%= link_to "Add health status", new_health_path, class: "btn btn-submit" %>
-        </div>
+    <% end %> 
+    
+    <div class="row-photo">
+    <% @plant.photos.each do |p| %>
+    <div class="col-md-2">
+      <div class="photo-thumbnail-container">
+        <div class="img-responsive thumbnail"><%= link_to (image_tag p.image.url), plant_photo_path(@plant, p), class: "img-upload-thumb" if p.image? %></div>
+      </div>
     </div>
-  <!--   end variety selector --> 
+  <% end %>
+</div>
+
   </div>
-  <%= render "partials/photoIndex" %>
+  <!--   end variety selector --> 
   
-<% end %> 
+  
+
 

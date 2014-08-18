@@ -7,17 +7,8 @@ class PlantsController < ApplicationController
   end
 
   def show
-
-    # @id = params[:id]
-    # @photo = Photo.find(@id)
     @garden = Garden.where(id: params[:garden_id]).first
-    @id = params[:id]
-    @plant = Plant.find(@id)
-
-    # @plant = Plant.find(params[:id])
-    # @garden = Garden.where(id: params[:garden_id]).first
-    # @garden = Garden.find(params[:garden_id])
-    # @plant = Plant.new
+    @plant = Plant.find(params[:id])
   end
 
   def new
@@ -29,11 +20,12 @@ class PlantsController < ApplicationController
     @plant = @garden.plants.new(params.require(:plant).permit(:name, :health, :notes, :variety_id))
     @plant.plant_method = params[:plant_method]
     if @plant.save
-      # redirect_to garden_path(@garden)
-      render 'new'
+      @saved = true
+      redirect_to garden_path(@garden)
     else
       render 'new'
     end
+
   end
 
   def edit

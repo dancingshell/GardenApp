@@ -1,17 +1,13 @@
-<% unless @photos == nil %>
+
 <div class="row row-photo">
-<% @photos.where(plant_id: params[:plant_id]).each do |p| %>
+<% @plant.photos.each do |p| %>
     <div class="col-md-2">
       <div class="photo-thumbnail-container">
-        <a class="img-responsive thumbnail " href="<%=plant_photo_path(@plant.id, p)%>"><%=image_tag p.image.url, class: "img-upload-thumb" if p.image? %></a>
+        <a class="img-responsive thumbnail " href="<%=plant_photo_path(@plant.id, p, @garden)%>"><%=image_tag p.image.url, class: "img-upload-thumb" if p.image? %></a>
       </div>
     </div>
   <% end %>
 </div>
-<% else %>
-<div class="col-md-4">
-          <%= link_to "Add photo", new_plant_photo_path(@plant.id), class: "btn btn-submit" %>
-        </div>
-<% end %>
+
 
 

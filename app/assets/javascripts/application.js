@@ -69,7 +69,7 @@ angular.module("gardenApp", []).controller("gardenCtrl", ['$scope', '$http', fun
     }
     else if (tab == "messages") {
       $scope.messages = true;
-      console.log("message");
+      console.log("messages");
     }
     else if (tab == "settings") {
       $scope.setting = true;

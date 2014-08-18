@@ -2,36 +2,20 @@
 <!-- Check to see if the word garden is in the name of the garden  -->
 <!-- If not add "garden" to title -->
 <%= " Garden" if @garden.name.split(" ").last.downcase != "garden" %></h1>
+<%= form_for @plant, {url: garden_plants_path(@garden)} do |f| %>
+  <div class="signup row">
+    <div class="col-md-3">
+      <%= f.text_field :name, placeholder: "Name" %><br>
 
-  <!-- Nav tabs -->
-<ul class="nav nav-tabs page-title" role="tablist">
-  <li ng-class="{active: home == true}" ng-click='active("home")'><a href="#home" role="tab" data-toggle="tab">Plant It</a></li>
-  <li ng-click='active("profile")' ng-class='{active: profile == true}'><a href="#profile"  role="tab" data-toggle="tab">Details</a></li>
-  <li ng-click='active("messages")'><a href="#messages" role="tab" data-toggle="tab">Variety</a></li>
-  <li ng-click='active("settings")'><a href="#settings" role="tab" data-toggle="tab">Photos</a></li>
-</ul>
+      <div ng-click="test()"><%= f.submit "Submit",  class: "btn btn-submit"%></div>
+    </div>
+<% end %> 
+ <!--    This will show up when they submit (add variety to plant) -->
+    <div class="col-md-3">
 
-<!-- Tab panes -->
-<div class="tab-content">
-
-  <div ng-show="home" class="tab-pane active" id="home">
-    <%= form_for @plant, {url: garden_plants_path(@garden)} do |f| %>
-      <div class="signup row">
-        <div class="col-md-3">
-          <%= f.text_field :name, placeholder: "Plant Variety" %><br>
-
-          <%= f.select :plant_method, [["Seed",1],["Bulb",2],["Seedling",3],["Transplant",4]], {}, {name: "plant_method", :include_blank => "Select plant method"} %>
-          
-
-          <div ng-click='active("profile")'><a href="#profile" role="tab" data-toggle="tab"></a><%= f.submit "Next/Submit", class: "btn btn-submit" %></div>
-      </div>
-    <% end %> 
+    </div>
+  <!--   end variety selector -->
+    <div class="col-md-3 col-md-offset-3">
+      <a class="btn btn-submit" href="<%= gardens_path %>"><span class="glyphicon glyphicon-th-large"></span> Back to all Gardens</a>
+    </div>
   </div>
-  <div ng-show="profile"class="tab-pane" id="profile">...</div>
-  <div ng-show="messages"class="tab-pane" id="messages">...</div>
-  <div ng-show="settings"class="tab-pane" id="settings">...</div>
-</div>
-
-
-<%#= render "partials/varietyModal" %>
-  

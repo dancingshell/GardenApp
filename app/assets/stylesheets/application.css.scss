@@ -172,20 +172,30 @@ body {
   opacity: 1.0;
 }
 */
+
+.text-row {
+  background-color: white;
+  border-radius: 5px;
+  height: 100px;
+  margin: 10px;
+
+}
 .plant-text {
   margin: 0 auto;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-bottom: 50px;
-  width: auto;
-  max-width: 150px;
+  width: 500px;
+  max-width: 300px;
 /*  color: red;*/
-  font-size: 20px;
+  font-size: 25px;
   text-decoration: none;
-  background-color: white;
-  background-image: url();
   border-radius: 8px;
   color: darken($grasscolor, 20%);
   padding: 0px 60px;
+  &:hover {
+    color: darken($grasscolor, 30%);
+    text-decoration: none;
+  }
 }
 
 .photo-text-wrapper {

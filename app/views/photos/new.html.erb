@@ -1,4 +1,4 @@
-<h1> New Photos </h1>
+<h1 class="page-title"> Upload photos for <%= @plant.name %> <a class="btn btn-submit" href="<%= gardens_path %>"><span class="glyphicon glyphicon-th-large"></span> Back to Plant</a> </h1>
 <div class="signup">
   <%= form_for @photo , {url: plant_photos_path(@plant)} do |f| %>
   <%= f.file_field :image, class: "photo-upload" %>
@@ -7,4 +7,3 @@
   <% end %>
 </div>
 
-<a class="btn btn-submit" href="<%= gardens_path %>"><span class="glyphicon glyphicon-th-large"></span> Back to Plant</a>
