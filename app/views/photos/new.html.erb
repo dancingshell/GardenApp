@@ -2,7 +2,7 @@
 <div class="signup">
   <%= form_for @photo , {url: plant_photos_path(@plant)} do |f| %>
   <%= f.file_field :image, class: "photo-upload" %>
-  <%= f.text_field :tags, placeholder: "Add Photo Tags" %>
+  <%#= f.text_field :tags, placeholder: "Add Photo Tags" %>
   <%= f.submit "Submit", class: "btn btn-submit" %>
   <% end %>
 </div>

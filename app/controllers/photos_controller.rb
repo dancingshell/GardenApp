@@ -13,7 +13,7 @@ class PhotosController < ApplicationController
 
   def show
     @garden
-    @photo = Photo.find(params[:id])
+    @photo = @plant.photos.find(params[:id])
   end
 
 
